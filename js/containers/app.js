@@ -19,30 +19,39 @@ class App extends Component{
 
   static calculateState(prevState){
     //console.log(prevState)
-    let state = Store.getState()
-    return {...state}
+    return {...Store.getState()}
   }
 
   constructor(){
     super()
+    this.index = Store.getState().index
     this._windowResizeListener = this._handleResize.bind(this)
+    this._swipeListener = this._handleSwipe.bind(this)
   }
 
   componentDidMount() {
     window.addEventListener('resize', this._windowResizeListener)
+    document.addEventListener('swipe', this._swipeListener)
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this._windowResizeListener)
+    document.removeEventListener('swipe', this._swipeListener)
   }
 
   _handleResize(){
     Actions.setSize()
   }
 
-  render(){
+  _handleSwipe(e){
+    Actions.sliderSwiped(e)
+  }
 
-    return <ImageSlider {...this.state} setIndex={Actions.setIndex} />
+  render(){
+    if(this.index !== this.state.index){
+      this.index = this.state.index
+    }
+    return <ImageSlider {...this.state} sliderClicked={Actions.sliderClicked} />
 
 
 /*

@@ -15,13 +15,14 @@ select, button, .loading{
 }
 
 body{
+  overflow: hidden;
 }
 
 img{
   width: 100%;
   height: 100%;
   object-fit: contain;
-  position: absolute;
+  // position: absolute;
 }
 
 #app{

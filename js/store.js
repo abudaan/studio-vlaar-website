@@ -44,7 +44,40 @@ class Store extends ReduceStore {
     }
   }
 
+
+  calculateStateByIndex(operation, state){
+    let index = state.index
+    let maxIndex = state.projects.length
+
+    if(operation === '+'){
+      index++
+    }else if(operation === '-'){
+      index--
+    }
+
+    if(index < 0){
+      index = 0
+      // index = maxIndex - 1
+    }else if(index >= maxIndex){
+      index = maxIndex - 1
+      // index = 0
+    }
+
+    if(index !== state.index){
+      let animStyle = {
+        left: -index * state.width,
+        transistion: '1s'
+      }
+      return {...state, index, animStyle}
+    }
+
+    return state
+  }
+
+
   reduce(state, action) {
+
+    let operation
 
     switch(action.type) {
 
@@ -52,31 +85,29 @@ class Store extends ReduceStore {
         return {...state, width: action.payload.width, height: action.payload.height}
 
 
-      case ActionTypes.SET_INDEX:
+      case ActionTypes.SLIDER_CLICKED:
 
         let x = action.payload.event.nativeEvent.clientX
-        let index = state.index
-        let maxIndex = state.projects.length
 
         if(x < state.width / 2){
-          index--
+          operation = '-'
         }else if(x >= state.width / 2){
-          index++
+          operation = '+'
+        }
+        return state
+//        return this.calculateStateByIndex(operation, state)
+
+      case ActionTypes.SLIDER_SWIPED:
+
+        let direction = action.payload.event.detail.direction
+        if(direction === 'right'){
+          operation = '-'
+        }else if(direction === 'left'){
+          operation = '+'
         }
 
-        if(index < 0){
-          index = maxIndex - 1
-        }else if(index >= maxIndex){
-          //index = maxIndex - 1
-          index = 0
-        }
+        return this.calculateStateByIndex(operation, state)
 
-        let animStyle = {
-          left: -index * state.width,
-          transistion: '1s'
-        }
-
-        return {...state, index, animStyle}
 
       default:
         return state

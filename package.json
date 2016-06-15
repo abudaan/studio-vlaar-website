@@ -21,17 +21,26 @@
   "engines": {
     "node": "0.10.x"
   },
+  "babel": {
+    "plugins": [
+      "transform-class-properties",
+      "transform-decorators-legacy"
+    ],
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ]
+  },
   "dependencies": {
+    "flux": "*",
     "isomorphic-fetch": "*",
     "react": "*",
     "react-addons-css-transition-group": "*",
-    "react-dom": "*",
-    "flux": "*"
+    "react-dom": "*"
   },
   "scripts": {
-    "start": "ws",
-    "start-ssl": "ws --key ../localhost.key --cert ../localhost.crt",
-    "watch": "watchify js/index.js -t [ babelify --presets [ es2015 react stage-0 ] --plugins [ transform-class-properties transform-decorators-legacy ] ] -o build/app.js --debug --verbose",
-    "build": "browserify js/index.js -t [ babelify --presets [ es2015 react stage-0 ] --plugins [ transform-class-properties transform-decorators-legacy ] ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
+    "watch": "watchify js/index.js -t [ babelify ] -o build/app.js --debug --verbose",
+    "build": "browserify js/index.js -t [ babelify ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
   }
 }

@@ -14,9 +14,17 @@ export default {
   },
 
 
-  setIndex(event){
+  sliderClicked(event){
     AppDispatcher.dispatch({
-      type: ActionTypes.SET_INDEX,
+      type: ActionTypes.SLIDER_CLICKED,
+      payload: {event}
+    })
+  },
+
+
+  sliderSwiped(event){
+    AppDispatcher.dispatch({
+      type: ActionTypes.SLIDER_SWIPED,
       payload: {event}
     })
   },

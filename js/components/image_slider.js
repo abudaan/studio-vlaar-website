@@ -31,7 +31,7 @@ export default class ImageSlider extends Component{
 
 
   render(){
-    console.log(this.props.animStyle)
+    //console.log(this.props.animStyle)
 
     let style
     let slides = []
@@ -43,7 +43,7 @@ export default class ImageSlider extends Component{
 
     style = {...sliderStyle, ...this.props.animStyle, width: `${this.props.width * this.numProjects}px`}
     return(
-      <div onClick={this.props.setIndex} style={style}> {slides} </div>
+      <div onClick={this.props.sliderClicked} style={style}> {slides} </div>
     )
   }
 }
@@ -53,6 +53,6 @@ ImageSlider.propTypes = {
   imageFolder: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   projects: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setIndex: PropTypes.func.isRequired,
+  sliderClicked: PropTypes.func.isRequired,
   width: PropTypes.number.isRequired,
 }
