@@ -1,0 +1,6 @@
+build
+design
+img
+node_modules/
+*.lock
+npm-debug.log
