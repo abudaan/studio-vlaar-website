@@ -42,9 +42,12 @@ export default class ImageSlider extends Component{
     })
 
     style = {...sliderStyle, ...this.props.animStyle, width: `${this.props.width * this.numProjects}px`}
-    return(
-      <div onClick={this.props.sliderClicked} style={style}> {slides} </div>
-    )
+
+    if(this.props.touchEnabled === true){
+      return <div style={style}> {slides} </div>
+    }
+    return <div onClick={this.props.sliderClicked} style={style}> {slides} </div>
+
   }
 }
 

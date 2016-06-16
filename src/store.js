@@ -2,45 +2,25 @@ import {ReduceStore} from 'flux/utils'
 import AppDispatcher from './app_dispatcher'
 import * as ActionTypes from './constants/action_types'
 import * as DisplayStates from './constants/display_states'
+import {getBrowser} from './browser_check'
 
 
 class Store extends ReduceStore {
 
   getInitialState(){
     return {
-      projects: [
-        {
-          title: 'project1',
-          image: 'project1.jpg'
-        },
-        {
-          title: 'project2',
-          image: 'project2.jpg'
-        },
-        {
-          title: 'project3',
-          image: 'project3.jpg'
-        },
-        {
-          title: 'project4',
-          image: 'project4.jpg'
-        },
-        {
-          title: 'project5',
-          image: 'project5.jpg'
-        },
-        {
-          title: 'project6',
-          image: 'project6.jpg'
-        },
-      ],
-      imageFolder: './img',
+      ...getBrowser(),
+      projects: [],
+      imageFolder: '',
+      displayState: DisplayStates.LOADING,
       width: window.innerWidth,
       height: window.innerHeight,
       index: 0,
       animStyle: {
         left: 0
-      }
+      },
+      showMenu: false,
+      showProjectInfo: false,
     }
   }
 
@@ -81,6 +61,10 @@ class Store extends ReduceStore {
 
     switch(action.type) {
 
+      case ActionTypes.DATA_LOADED:
+        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN}
+
+
       case ActionTypes.SET_SIZE:
         return {...state, width: action.payload.width, height: action.payload.height}
 
@@ -94,12 +78,14 @@ class Store extends ReduceStore {
         }else if(x >= state.width / 2){
           operation = '+'
         }
-        return state
-//        return this.calculateStateByIndex(operation, state)
+
+        return this.calculateStateByIndex(operation, state)
+
 
       case ActionTypes.SLIDER_SWIPED:
 
         let direction = action.payload.event.detail.direction
+
         if(direction === 'right'){
           operation = '-'
         }else if(direction === 'left'){
@@ -107,6 +93,23 @@ class Store extends ReduceStore {
         }
 
         return this.calculateStateByIndex(operation, state)
+
+
+      case ActionTypes.LOGO_CLICKED:
+        let showMenu = !state.showMenu
+        return {...state, showMenu}
+
+      case ActionTypes.SHOW_MENU:
+        return {...state, showMenu: true}
+
+      case ActionTypes.HIDE_MENU:
+        return {...state, showMenu: false}
+
+      case ActionTypes.SHOW_PROJECT_INFO:
+        return {...state, showProjectInfo: true}
+
+      case ActionTypes.HIDE_PROJECT_INFO:
+        return {...state, showProjectInfo: false}
 
 
       default:

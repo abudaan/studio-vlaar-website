@@ -1,0 +1,29 @@
+{
+  "projects": [
+    {
+      "title": "project1",
+      "image": "project1.jpg"
+    },
+    {
+      "title": "project2",
+      "image": "project2.jpg"
+    },
+    {
+      "title": "project3",
+      "image": "project3.jpg"
+    },
+    {
+      "title": "project4",
+      "image": "project4.jpg"
+    },
+    {
+      "title": "project5",
+      "image": "project5.jpg"
+    },
+    {
+      "title": "project6",
+      "image": "project6.jpg"
+    }
+  ],
+  "imageFolder": "./img"
+}

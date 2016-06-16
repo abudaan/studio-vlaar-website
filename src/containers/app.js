@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import {Container} from 'flux/utils'
 import Actions from '../actions'
-import Authorize from '../components/authorize'
-import Controls from '../components/controls'
+import Contact from '../components/contact'
+import Menu from '../components/menu'
 import ImageSlider from '../components/image_slider'
 import Store from '../store'
 import * as DisplayStates from '../constants/display_states'
+import {fetchJSON} from '../fetch_helpers'
 
 // only component with state
 
@@ -27,6 +28,8 @@ class App extends Component{
     this.index = Store.getState().index
     this._windowResizeListener = this._handleResize.bind(this)
     this._swipeListener = this._handleSwipe.bind(this)
+    fetchJSON('./data.json')
+    .then(Actions.dataLoaded)
   }
 
   componentDidMount() {
@@ -48,31 +51,34 @@ class App extends Component{
   }
 
   render(){
-    if(this.index !== this.state.index){
-      this.index = this.state.index
-    }
-    return <ImageSlider {...this.state} sliderClicked={Actions.sliderClicked} />
 
+    let component = null
 
-/*
     switch(this.state.displayState){
 
-      case DisplayStates.AUTHORIZE:
-        return <Authorize onClick={Actions.login}/>
+      case DisplayStates.LOADING:
+        component = <div>{'loading...'}</div>
+        break
 
-      case DisplayStates.CONFIGURE:
-        return <Controls {...this.state} selectBoard={Actions.selectBoard} selectInterval={Actions.selectInterval} start={Actions.start}/>
+      case DisplayStates.MAIN:
+        component = <ImageSlider {...this.state} sliderClicked={Actions.sliderClicked} />
+        break
 
-      case DisplayStates.RUN:
-        return <ImageSlider {...this.state} nextImage={Actions.nextImage} />
-
-      case DisplayStates.MESSAGE:
-        return <div className={'message'}>{this.state.message}</div>
+      case DisplayStates.CONTACT:
+        component = <Contact {...this.state} />
+        break
 
       default:
-        return false
+        // let's take a walk in the woods
+
     }
-*/
+
+    return (
+      <div>
+        <Menu showMenu={this.state.showMenu} logoClicked={Actions.logoClicked}/>
+        {component}
+      </div>
+    )
   }
 }
 

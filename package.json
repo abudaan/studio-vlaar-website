@@ -40,7 +40,7 @@
     "react-dom": "*"
   },
   "scripts": {
-    "watch": "watchify js/index.js -t [ babelify ] -o build/app.js --debug --verbose",
-    "build": "browserify js/index.js -t [ babelify ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
+    "watch": "watchify src/index.js -t [ babelify ] -o build/app.js --debug --verbose",
+    "build": "browserify src/index.js -t [ babelify ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
   }
 }

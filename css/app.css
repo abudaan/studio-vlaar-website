@@ -1,28 +1,19 @@
 html, body{
-  background-color: black;
+  background-color: white;
   overflow: hidden;
-  font-family: monospace;
+  font-family: 'libre_baskervilleregular';
   width: 100%;
   height: 100%;
-  color: white;
-}
-
-select, button, .loading{
-  font-family: monospace;
-  font-size: 15px;
-  padding: 3px;
-  margin: 20px;
+  color: #333;
 }
 
 body{
-  overflow: hidden;
 }
 
 img{
   width: 100%;
   height: 100%;
   object-fit: contain;
-  // position: absolute;
 }
 
 #app{
@@ -30,43 +21,33 @@ img{
   height: 100%;
 }
 
-.image-enter {
-  opacity: 0.01;
-}
-
-.image-enter.image-enter-active {
-  opacity: 1;
-  transition: opacity 1200ms ease-in;
-}
-
-.image-leave {
-  opacity: 1;
-}
-
-.image-leave.image-leave-active {
-  opacity: 0.01;
-  transition: opacity 1200ms ease-in;
-}
-
-.image-appear {
-  opacity: 0.01;
-}
-
-.image-appear.image-appear-active {
-  opacity: 1;
-  transition: opacity 1200ms ease-in;
-}
-
-.label-interval{
-  font-family: monospace;
-  font-size: 15px;
-  margin: 20px;
+.menu{
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  width: 150px;
-  display: inline-block;
+  font-size: 36px;
+  position: absolute;
+  z-index: 3;
+  left: 50px;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+
 }
 
-.range-interval{
-  vertical-align: text-bottom;
-  width: 400px;
+.menu #logo{
+  width: 160px;
+  cursor: pointer;
+}
+
+.menu_container{
+  overflow: hidden;
+  transition: 1s;
+  position: relative;
+  height: 200px;
+}
+
+.menu_extended{
+  top: -200px;
+  transition: 1s;
+  position: absolute;
 }

@@ -4,6 +4,7 @@ let xDown = null
 let yDown = null
 let lastEvent = null
 const mAbs = Math.abs
+const minDistance = 100
 
 const Swipe = {
 
@@ -23,7 +24,8 @@ const Swipe = {
   },
 
   handleTouchEnd(){
-    if(typeof xDown === 'undefined' || typeof yDown === 'undefined'){
+
+    if(lastEvent === null){
       return
     }
 
@@ -34,15 +36,15 @@ const Swipe = {
     let yDiff = yDown - yUp
 
     if(mAbs(xDiff) > mAbs(yDiff)){
-      if(xDiff > 0){
+      if(xDiff > minDistance){
         document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'left'}}))
-      }else{
+      }else if(xDiff < -minDistance){
         document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'right'}}))
       }
-    }else{
-      if(yDiff > 0){
+    }else if(mAbs(xDiff) <= mAbs(yDiff)){
+      if(yDiff > minDistance){
         document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'up'}}))
-      } else{
+      }else if(yDiff < -minDistance){
         document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'down'}}))
       }
     }
@@ -50,6 +52,7 @@ const Swipe = {
     /* reset values */
     xDown = null
     yDown = null
+    lastEvent = null
   }
 }
 
