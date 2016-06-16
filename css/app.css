@@ -60,7 +60,7 @@ html, body{
 #contact_page{
   height: 100vh;
   width: 100%;
-  background-color: pink;
+  // background-color: pink;
 }
 
 #photo_pascal{
@@ -72,4 +72,33 @@ html, body{
 #photo_pascal img{
   height: 100%;
   // width: auto;
+}
+
+
+
+.component-enter {
+  opacity: 0.01;
+}
+
+.component-enter.component-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.component-leave {
+  opacity: 1;
+}
+
+.component-leave.component-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.component-appear {
+  opacity: 0.01;
+}
+
+.component-appear.component-appear-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
 }

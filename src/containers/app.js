@@ -7,6 +7,8 @@ import ImageSlider from '../components/image_slider'
 import Store from '../store'
 import * as DisplayStates from '../constants/display_states'
 import {fetchJSON} from '../fetch_helpers'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
 
 // only component with state
 
@@ -57,15 +59,15 @@ class App extends Component{
     switch(this.state.displayState){
 
       case DisplayStates.LOADING:
-        component = <div>{'loading...'}</div>
+        component = <div key={'loading'} >{'loading...'}</div>
         break
 
       case DisplayStates.MAIN:
-        component = <ImageSlider {...this.state} sliderClicked={Actions.sliderClicked} />
+        component = <ImageSlider key={'imageslider'} {...this.state} sliderClicked={Actions.sliderClicked} />
         break
 
       case DisplayStates.CONTACT:
-        component = <Contact {...this.state} />
+        component = <Contact key={'contact'} {...this.state} />
         break
 
       default:
@@ -75,8 +77,22 @@ class App extends Component{
 
     return (
       <div>
-        <Menu showMenu={this.state.showMenu} logoClicked={Actions.logoClicked} menuClicked={Actions.menuClicked}/>
-        {component}
+        <Menu
+          displayState={this.state.displayState}
+          showMenu={this.state.showMenu}
+          logoClicked={Actions.logoClicked}
+          menuClicked={Actions.menuClicked}
+          hideMenu={Actions.hideMenu}
+        />
+        <ReactCSSTransitionGroup
+          transitionName={'component'}
+          transitionAppear={true}
+          transitionAppearTimeout={300}
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
+        >
+          {component}
+        </ReactCSSTransitionGroup>
       </div>
     )
   }

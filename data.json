@@ -25,5 +25,7 @@
       "image": "project6.jpg"
     }
   ],
-  "imageFolder": "./img"
+  "imageFolder": "./img",
+  "pinterestUrl": "https://nl.pinterest.com/studioVLAAR/",
+  "instagramUrl": "https://www.instagram.com/explore/tags/studiovlaar/"
 }

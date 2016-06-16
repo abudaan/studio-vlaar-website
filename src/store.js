@@ -103,8 +103,26 @@ class Store extends ReduceStore {
       case ActionTypes.MENU_CLICKED:
         let id = action.payload.event.target.id
         switch(id){
+
           case 'contact':
-            return {...state, displayState: DisplayStates.CONTACT}
+            if(state.displayState === DisplayStates.MAIN){
+              return {...state, displayState: DisplayStates.CONTACT}
+            }
+            return {...state, displayState: DisplayStates.MAIN}
+
+          case 'project':
+            if(state.displayState !== DisplayStates.MAIN){
+              return {...state, displayState: DisplayStates.MAIN, showProjectInfo: true}
+            }
+            return {...state, showProjectInfo: true}
+
+          case 'pinterest':
+            window.open(state.pinterestUrl)
+            return state
+
+          case 'instagram':
+            window.open(state.instagramUrl)
+            return state
 
           default:
             return state

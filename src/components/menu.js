@@ -1,19 +1,25 @@
 import React, {PropTypes} from 'react'
+import * as DisplayStates from '../constants/display_states'
 
 
 const divStyle = {
 }
 
-const Menu = ({showMenu, logoClicked, menuClicked}) => {
+const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
 
+  let menu = document.getElementsByClassName('menu_collapsed')[0]
   let animStyle1 = {}
   let animStyle2 = {}
   let duration = '0.5s'
-  let height = 150
+  let height = 170
+
+  if(typeof menu !== 'undefined'){
+    height = getComputedStyle(menu).height.replace('px', '')
+  }
 
   if(showMenu === true){
     animStyle1 = {
-      height: height,
+      height: height + 'px',
       transition: duration
     }
     animStyle2 = {
@@ -26,9 +32,42 @@ const Menu = ({showMenu, logoClicked, menuClicked}) => {
       transition: duration
     }
     animStyle2 = {
-      top: -height,
+      top: -height + 'px',
       transition: duration
     }
+  }
+
+
+  let menuItems
+
+  if(displayState === DisplayStates.CONTACT){
+    menuItems = (
+      <div>
+        <div id={'contact'} className={'menu_link'} onClick={menuClicked}>contact</div>
+        <div>-</div>
+        <div id={'pinterest'} className={'menu_link'} onClick={menuClicked}>pinterest</div>
+        <div>-</div>
+        <div id={'instagram'} className={'menu_link'} onClick={menuClicked}>instagram</div>
+        <div>-</div>
+        <div id={'project'} className={'menu_link'} onClick={menuClicked}>project</div>
+        <br/>
+        <div id={'close'} className={'menu_link'} onClick={hideMenu}>x</div>
+      </div>
+    )
+  }else{
+    menuItems = (
+      <div>
+        <div id={'contact'} className={'menu_link'} onClick={menuClicked}>contact</div>
+        <div>-</div>
+        <div id={'pinterest'} className={'menu_link'} onClick={menuClicked}>pinterest</div>
+        <div>-</div>
+        <div id={'instagram'} className={'menu_link'} onClick={menuClicked}>instagram</div>
+        <div>-</div>
+        <div id={'project'} className={'menu_link'} onClick={menuClicked}>project</div>
+        <br/>
+        <div id={'close'} className={'menu_link'} onClick={hideMenu}>x</div>
+      </div>
+    )
   }
 
   return (
@@ -38,11 +77,7 @@ const Menu = ({showMenu, logoClicked, menuClicked}) => {
       </div>
       <div style={animStyle1} className={'menu_anim_container'}>
         <div style={animStyle2} className={'menu_collapsed'}>
-          <div id={'contact'} className={'menu_link'} onClick={menuClicked}>contact</div>
-          <div>-</div>
-          <div id={'pinterest'} className={'menu_link'} onClick={menuClicked}>pinterest</div>
-          <div>-</div>
-          <div id={'project'} className={'menu_link'} onClick={menuClicked}>project</div>
+          {menuItems}
         </div>
       </div>
     </div>
