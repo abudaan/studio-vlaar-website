@@ -44,6 +44,13 @@ export default {
     })
   },
 
+  menuClicked(event){
+    AppDispatcher.dispatch({
+      type: ActionTypes.MENU_CLICKED,
+      payload: {event}
+    })
+  },
+
   showMenu(){
     AppDispatcher.dispatch({
       type: ActionTypes.SHOW_MENU,

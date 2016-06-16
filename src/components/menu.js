@@ -4,33 +4,45 @@ import React, {PropTypes} from 'react'
 const divStyle = {
 }
 
-const Menu = ({showMenu, logoClicked}) => {
+const Menu = ({showMenu, logoClicked, menuClicked}) => {
 
-  let style = {}
+  let animStyle1 = {}
+  let animStyle2 = {}
+  let duration = '0.5s'
+  let height = 150
+
   if(showMenu === true){
-    style = {
+    animStyle1 = {
+      height: height,
+      transition: duration
+    }
+    animStyle2 = {
       top: 0,
-      transistion: '1s'
+      transition: duration
     }
   }else{
-    style = {
-      top: -200,
-      transistion: '1s'
+    animStyle1 = {
+      height: 0,
+      transition: duration
+    }
+    animStyle2 = {
+      top: -height,
+      transition: duration
     }
   }
 
-  console.log(showMenu, style)
-
   return (
-    <div className={'menu'} style={divStyle}>
-      <img id='logo' src='./img/logo.svg' onClick={logoClicked}></img><br/>
-      <div className={'menu_container'}>
-        <div style={style} className={'menu_extended'}>
-          <div>contact</div>
+    <div className={'menu'}>
+      <div className={'menu_logo'} style={divStyle}>
+        <img id='logo' src='./img/logo.svg' onClick={logoClicked}></img><br/>
+      </div>
+      <div style={animStyle1} className={'menu_anim_container'}>
+        <div style={animStyle2} className={'menu_collapsed'}>
+          <div id={'contact'} className={'menu_link'} onClick={menuClicked}>contact</div>
           <div>-</div>
-          <div>pinterest</div>
+          <div id={'pinterest'} className={'menu_link'} onClick={menuClicked}>pinterest</div>
           <div>-</div>
-          <div>project</div>
+          <div id={'project'} className={'menu_link'} onClick={menuClicked}>project</div>
         </div>
       </div>
     </div>

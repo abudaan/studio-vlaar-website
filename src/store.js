@@ -99,6 +99,19 @@ class Store extends ReduceStore {
         let showMenu = !state.showMenu
         return {...state, showMenu}
 
+
+      case ActionTypes.MENU_CLICKED:
+        let id = action.payload.event.target.id
+        switch(id){
+          case 'contact':
+            return {...state, displayState: DisplayStates.CONTACT}
+
+          default:
+            return state
+
+        }
+
+
       case ActionTypes.SHOW_MENU:
         return {...state, showMenu: true}
 

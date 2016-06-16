@@ -4,8 +4,8 @@ const Contact = () => {
 
 
   return (
-    <div>
-      {'Studio Vlaar, nu met baard!'}
+    <div id={'contact_page'}>
+      <div id={'photo_pascal'}><img src={'./img/pascal.jpg'}></img></div>
     </div>
   )
 }

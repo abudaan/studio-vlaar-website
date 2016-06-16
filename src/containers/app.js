@@ -75,7 +75,7 @@ class App extends Component{
 
     return (
       <div>
-        <Menu showMenu={this.state.showMenu} logoClicked={Actions.logoClicked}/>
+        <Menu showMenu={this.state.showMenu} logoClicked={Actions.logoClicked} menuClicked={Actions.menuClicked}/>
         {component}
       </div>
     )
