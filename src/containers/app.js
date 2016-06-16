@@ -3,6 +3,7 @@ import {Container} from 'flux/utils'
 import Actions from '../actions'
 import Contact from '../components/contact'
 import Menu from '../components/menu'
+import ProjectInfo from '../components/project_info'
 import ImageSlider from '../components/image_slider'
 import Store from '../store'
 import * as DisplayStates from '../constants/display_states'
@@ -85,13 +86,20 @@ class App extends Component{
           hideMenu={Actions.hideMenu}
         />
         <ReactCSSTransitionGroup
+          component={'div'}
           transitionName={'component'}
           transitionAppear={true}
-          transitionAppearTimeout={300}
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
+          transitionAppearTimeout={500}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
         >
           {component}
+          <ProjectInfo
+            showProjectInfo={true}
+            number={100}
+            info={'beren in het bos en op de akkers en in de velden en zo voort en zo verder'}
+            width={this.state.height}
+          />
         </ReactCSSTransitionGroup>
       </div>
     )

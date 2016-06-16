@@ -60,6 +60,7 @@ html, body{
 #contact_page{
   height: 100vh;
   width: 100%;
+  position: absolute;
   // background-color: pink;
 }
 
@@ -76,13 +77,48 @@ html, body{
 
 
 
+#project_info{
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  top: 0px;
+  left: calc(-100vh + 300px);
+  height: 200px;
+  width: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+
+  transform-origin: right top 0;
+  transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+}
+
+.project_info_text{
+  padding: 20px;
+  // margin-left: 30px;
+  color: black;
+  float: right;
+  // display: inline-block;
+  line-height: 2em;
+  text-align: right;
+  // width: 100vh;
+  height: 160px;
+  width: 100%
+  background-color: pink;
+
+
+}
+
+
 .component-enter {
   opacity: 0.01;
 }
 
 .component-enter.component-enter-active {
   opacity: 1;
-  transition: opacity 300ms ease-in;
+  transition: opacity 500ms linear;
 }
 
 .component-leave {
@@ -91,7 +127,7 @@ html, body{
 
 .component-leave.component-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: opacity 500ms linear;
 }
 
 .component-appear {
@@ -100,5 +136,5 @@ html, body{
 
 .component-appear.component-appear-active {
   opacity: 1;
-  transition: opacity 300ms ease-in;
+  transition: opacity 500ms linear;
 }
