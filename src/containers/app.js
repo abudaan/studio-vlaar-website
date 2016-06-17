@@ -68,7 +68,7 @@ class App extends Component{
         break
 
       case DisplayStates.CONTACT:
-        component = <Contact key={'contact'} {...this.state} />
+        component = <Contact key={'contact'} {...this.state} hideContact={Actions.hideContact}/>
         break
 
       default:

@@ -1,9 +1,9 @@
 #project_info {
   position: absolute;
-  top: 0px;
   z-index: 3;
-  top: 0px;
-  left: calc(-100vh + 300px);
+  top: calc(180px + 190px);
+  left: calc(-100vh + 50px);
+  font-size: 14px;
   height: 200px;
   width: 100vh;
   background-color: rgba(255, 255, 255, 0.7);
@@ -12,6 +12,12 @@
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
+  @media all and (max-width: 768px) {
+    #project_info {
+      top: 0px;
+      left: calc(-100vh + 200px);
+      height: 170px;
+      font-size: 15px; } }
 
 .project_info_text {
   padding: 20px;

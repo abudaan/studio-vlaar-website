@@ -31,8 +31,6 @@ export default class ImageSlider extends Component{
 
 
   render(){
-    console.log(this.props.sliderStyle)
-
     let style
     let slides = []
     this.props.projects.forEach((project, i) => {

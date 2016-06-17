@@ -1,22 +1,33 @@
+$small_width: 150px
+
+
 .menu
   position: absolute
   z-index: 3
   left: 50px
-  width: 200px
+  @media all and (max-width: 768px)
+    left: 20px
+
 
 
 .menu_logo
   // background-color: rgba(0, 255, 0, 1)
   background-color: rgba(0, 0, 0, 0.4)
-  font-size: 36px
-  width: 200px
   cursor: pointer
   text-align: center
-  padding: 10px 0px
+  padding: 20px 0px
+  width: 200px
+  height: 150px
+
+  @media all and (max-width: 768px)
+    width: $small_width
+    height: 80px
 
 
 .menu_logo img
-  width: 160px
+  width: 100px
+  @media all and (max-width: 768px)
+    width: 60px
 
 
 .menu_anim_container
@@ -24,7 +35,6 @@
   background-color: rgba(0, 0, 0, 0.4)
   overflow: hidden
   position: relative
-  height: 120px
   transition: 1s
 
 
@@ -34,9 +44,22 @@
   transition: 1s
   text-align: center
   color: white
-  width: 200px
   line-height: 1.5em
+
+  font-size: 15px
+  width: 200px
+  height: 180px
+
+  @media all and (max-width: 768px)
+    font-size: 15px
+    width: $small_width
+    //height: auto
+    height: 100vh
 
 
 .menu_link
   cursor: pointer
+
+
+.close
+  margin-top: 5px

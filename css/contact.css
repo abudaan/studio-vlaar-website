@@ -5,10 +5,43 @@
 
 #photo_pascal {
   display: inline-block;
-  float: right;
-  height: inherit; }
+  float: left;
+  height: inherit;
+  width: calc((100% - 290px)/2); }
+  @media all and (max-width: 768px) {
+    #photo_pascal {
+      width: calc((100% - 170px) * 0.45); } }
 
 #photo_pascal img {
   height: 100%; }
+
+#contact_content {
+  display: inline-flex;
+  align-items: center;
+  float: left;
+  height: inherit;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  margin-left: 290px;
+  width: calc((100% - 290px)/2); }
+  @media all and (max-width: 768px) {
+    #contact_content {
+      width: calc((100% - 170px) * 0.55);
+      margin-left: 170px;
+      font-size: 14px; } }
+
+#contact_content_container {
+  align-self: center;
+  width: 100%; }
+
+.contact_item,
+.separator {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%; }
+
+/*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only */
+.e-mail:before {
+  content: "pascal@studiovlaar.nl"; }
 
 /*# sourceMappingURL=contact.css.map */

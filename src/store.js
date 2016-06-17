@@ -136,18 +136,11 @@ class Store extends ReduceStore {
 
         }
 
-
-      case ActionTypes.SHOW_MENU:
-        return {...state, showMenu: true}
-
       case ActionTypes.HIDE_MENU:
         return {...state, showMenu: false}
 
-      case ActionTypes.SHOW_PROJECT_INFO:
-        return {...state, showProjectInfo: true}
-
-      case ActionTypes.HIDE_PROJECT_INFO:
-        return {...state, showProjectInfo: false}
+      case ActionTypes.HIDE_CONTACT:
+        return {...state, displayState: DisplayStates.MAIN}
 
 
       default:

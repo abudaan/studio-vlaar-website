@@ -1,6 +1,7 @@
 build
 design
 img
+portfolio
 node_modules/
 *.lock
 .sass-cache

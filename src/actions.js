@@ -51,12 +51,6 @@ export default {
     })
   },
 
-  showMenu(){
-    AppDispatcher.dispatch({
-      type: ActionTypes.SHOW_MENU,
-    })
-  },
-
 
   hideMenu(){
     AppDispatcher.dispatch({
@@ -65,16 +59,9 @@ export default {
   },
 
 
-  showProjectInfo(){
+  hideContact(){
     AppDispatcher.dispatch({
-      type: ActionTypes.SHOW_PROJECT_INFO,
-    })
-  },
-
-
-  hideProjectInfo(){
-    AppDispatcher.dispatch({
-      type: ActionTypes.HIDE_PROJECT_INFO,
+      type: ActionTypes.HIDE_CONTACT,
     })
   },
 

@@ -72,25 +72,33 @@ html, body {
 .menu {
   position: absolute;
   z-index: 3;
-  left: 50px;
-  width: 200px; }
+  left: 50px; }
+  @media all and (max-width: 768px) {
+    .menu {
+      left: 20px; } }
 
 .menu_logo {
   background-color: rgba(0, 0, 0, 0.4);
-  font-size: 36px;
-  width: 200px;
   cursor: pointer;
   text-align: center;
-  padding: 10px 0px; }
+  padding: 20px 0px;
+  width: 200px;
+  height: 150px; }
+  @media all and (max-width: 768px) {
+    .menu_logo {
+      width: 150px;
+      height: 80px; } }
 
 .menu_logo img {
-  width: 160px; }
+  width: 100px; }
+  @media all and (max-width: 768px) {
+    .menu_logo img {
+      width: 60px; } }
 
 .menu_anim_container {
   background-color: rgba(0, 0, 0, 0.4);
   overflow: hidden;
   position: relative;
-  height: 120px;
   transition: 1s; }
 
 .menu_collapsed {
@@ -99,11 +107,21 @@ html, body {
   transition: 1s;
   text-align: center;
   color: white;
+  line-height: 1.5em;
+  font-size: 15px;
   width: 200px;
-  line-height: 1.5em; }
+  height: 180px; }
+  @media all and (max-width: 768px) {
+    .menu_collapsed {
+      font-size: 15px;
+      width: 150px;
+      height: 100vh; } }
 
 .menu_link {
   cursor: pointer; }
+
+.close {
+  margin-top: 5px; }
 
 #contact_page {
   height: 100vh;
@@ -112,18 +130,51 @@ html, body {
 
 #photo_pascal {
   display: inline-block;
-  float: right;
-  height: inherit; }
+  float: left;
+  height: inherit;
+  width: calc((100% - 290px)/2); }
+  @media all and (max-width: 768px) {
+    #photo_pascal {
+      width: calc((100% - 170px) * 0.45); } }
 
 #photo_pascal img {
   height: 100%; }
 
+#contact_content {
+  display: inline-flex;
+  align-items: center;
+  float: left;
+  height: inherit;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  margin-left: 290px;
+  width: calc((100% - 290px)/2); }
+  @media all and (max-width: 768px) {
+    #contact_content {
+      width: calc((100% - 170px) * 0.55);
+      margin-left: 170px;
+      font-size: 14px; } }
+
+#contact_content_container {
+  align-self: center;
+  width: 100%; }
+
+.contact_item,
+.separator {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%; }
+
+/*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only */
+.e-mail:before {
+  content: "pascal@studiovlaar.nl"; }
+
 #project_info {
   position: absolute;
-  top: 0px;
   z-index: 3;
-  top: 0px;
-  left: calc(-100vh + 300px);
+  top: calc(180px + 190px);
+  left: calc(-100vh + 50px);
+  font-size: 14px;
   height: 200px;
   width: 100vh;
   background-color: rgba(255, 255, 255, 0.7);
@@ -132,6 +183,12 @@ html, body {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
+  @media all and (max-width: 768px) {
+    #project_info {
+      top: 0px;
+      left: calc(-100vh + 200px);
+      height: 170px;
+      font-size: 15px; } }
 
 .project_info_text {
   padding: 20px;

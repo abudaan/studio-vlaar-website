@@ -8,38 +8,6 @@ function createInfo({id, info}){
 }
 
 const ProjectInfo = ({showProjectInfo, currentProject}) => {
-/*
-  let menu = document.getElementsByClassName('menu_collapsed')[0]
-  let animStyle1 = {}
-  let animStyle2 = {}
-  let duration = '0.5s'
-  let height = 170
-
-  if(typeof menu !== 'undefined'){
-    height = getComputedStyle(menu).height.replace('px', '')
-  }
-
-  if(showMenu === true){
-    animStyle1 = {
-      height: height + 'px',
-      transition: duration
-    }
-    animStyle2 = {
-      top: 0,
-      transition: duration
-    }
-  }else{
-    animStyle1 = {
-      height: 0,
-      transition: duration
-    }
-    animStyle2 = {
-      top: -height + 'px',
-      transition: duration
-    }
-  }
-
-*/
 
   let child = <span key={'no_project_info'}></span>
 
