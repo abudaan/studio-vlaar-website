@@ -86,6 +86,7 @@ html, body{
   height: 200px;
   width: 100vh;
   background-color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
 
   transform-origin: right top 0;
   transform:rotate(-90deg);
@@ -99,16 +100,16 @@ html, body{
   padding: 20px;
   // margin-left: 30px;
   color: black;
-  float: right;
+  // float: right;
   // display: inline-block;
   line-height: 2em;
   text-align: right;
   // width: 100vh;
   height: 160px;
-  width: 100%
-  background-color: pink;
-
-
+  width: 100%;
+  position:absolute;
+  right: 3px;
+  // background-color: pink;
 }
 
 
@@ -137,4 +138,24 @@ html, body{
 .component-appear.component-appear-active {
   opacity: 1;
   transition: opacity 500ms linear;
+}
+
+
+
+.project_info-enter {
+  opacity: 0.01;
+}
+
+.project_info-enter.project_info-enter-active {
+  opacity: 1;
+  transition: opacity 250ms linear;
+}
+
+.project_info-leave {
+  opacity: 1;
+}
+
+.project_info-leave.project_info-leave-active {
+  opacity: 0.01;
+  transition: opacity 250ms linear;
 }

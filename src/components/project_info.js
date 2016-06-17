@@ -1,11 +1,8 @@
 import React, {PropTypes} from 'react'
-import * as DisplayStates from '../constants/display_states'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
-const divStyle = {
-}
-
-const ProjectInfo = ({showProjectInfo, info, number, width}) => {
+const ProjectInfo = ({showProjectInfo, currentProject}) => {
 /*
   let menu = document.getElementsByClassName('menu_collapsed')[0]
   let animStyle1 = {}
@@ -39,29 +36,42 @@ const ProjectInfo = ({showProjectInfo, info, number, width}) => {
 
 */
 
-  let menu = document.getElementsByClassName('project_info_text')[0]
-  let divWidth
-  if(typeof menu !== 'undefined'){
-    divWidth = getComputedStyle(menu).width.replace('px', '')
-  }
+  let child = <span key={'no_project_info'}></span>
 
-  let style = {
-    //marginLeft: -divWidth + 'px'
+  if(showProjectInfo === true){
+    child = (
+      <div key={'project_info'} id={'project_info'}>
+        <ReactCSSTransitionGroup
+          transitionName={'project_info'}
+          transitionEnterTimeout={250}
+          transitionLeaveTimeout={250}
+        >
+          <div key={currentProject.id} className={'project_info_text'}>
+            {`#${currentProject.id}`}<br/>
+            {'-'}<br/>
+            {currentProject.info}
+          </div>
+        </ReactCSSTransitionGroup>
+
+      </div>
+    )
   }
 
   return (
-    <div id={'project_info'}>
-      <div className={'project_info_text'} style={style}>
-        {'#'+number}<br/>
-        {'-'}<br/>
-        {info}
-      </div>
-    </div>
+    <ReactCSSTransitionGroup
+      transitionName={'project_info'}
+      transitionEnterTimeout={250}
+      transitionLeaveTimeout={250}
+    >
+      {child}
+    </ReactCSSTransitionGroup>
   )
 }
 
 
 ProjectInfo.propTypes = {
+  showProjectInfo: PropTypes.bool,
+  currentProject: PropTypes.object
 }
 
 export default ProjectInfo

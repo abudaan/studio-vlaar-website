@@ -16,7 +16,7 @@ class Store extends ReduceStore {
       width: window.innerWidth,
       height: window.innerHeight,
       index: 0,
-      animStyle: {
+      sliderAnimStyle: {
         left: 0
       },
       showMenu: false,
@@ -44,11 +44,11 @@ class Store extends ReduceStore {
     }
 
     if(index !== state.index){
-      let animStyle = {
+      let sliderAnimStyle = {
         left: -index * state.width,
-        transistion: '1s'
+        transition: '1s'
       }
-      return {...state, index, animStyle}
+      return {...state, index, sliderAnimStyle, currentProject: state.projects[index]}
     }
 
     return state
@@ -62,11 +62,16 @@ class Store extends ReduceStore {
     switch(action.type) {
 
       case ActionTypes.DATA_LOADED:
-        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN}
+        let currentProject = action.payload.data.projects[0]
+        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN, currentProject}
 
 
       case ActionTypes.SET_SIZE:
-        return {...state, width: action.payload.width, height: action.payload.height}
+        let sliderAnimStyle = {
+          left: -state.index * action.payload.width,
+          transition: '0s'
+        }
+        return {...state, sliderAnimStyle, width: action.payload.width, height: action.payload.height}
 
 
       case ActionTypes.SLIDER_CLICKED:
@@ -113,8 +118,10 @@ class Store extends ReduceStore {
           case 'project':
             if(state.displayState !== DisplayStates.MAIN){
               return {...state, displayState: DisplayStates.MAIN, showProjectInfo: true}
+            }else if(state.showProjectInfo === false){
+              return {...state, showProjectInfo: true}
             }
-            return {...state, showProjectInfo: true}
+            return {...state, showProjectInfo: false}
 
           case 'pinterest':
             window.open(state.pinterestUrl)

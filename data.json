@@ -1,28 +1,40 @@
 {
   "projects": [
     {
+      "id": 100,
       "title": "project1",
-      "image": "project1.jpg"
+      "image": "project1.jpg",
+      "info": "beren in het bos en op de akkers en in de velden en zo voort en zo verder"
     },
     {
+      "id": 101,
       "title": "project2",
-      "image": "project2.jpg"
+      "image": "project2.jpg",
+      "info": "This is project 2"
     },
     {
+      "id": 102,
       "title": "project3",
-      "image": "project3.jpg"
+      "image": "project3.jpg",
+      "info": "This is project 3"
     },
     {
+      "id": 103,
       "title": "project4",
-      "image": "project4.jpg"
+      "image": "project4.jpg",
+      "info": "This is project 4"
     },
     {
+      "id": 104,
       "title": "project5",
-      "image": "project5.jpg"
+      "image": "project5.jpg",
+      "info": "This is project 5"
     },
     {
+      "id": 105,
       "title": "project6",
-      "image": "project6.jpg"
+      "image": "project6.jpg",
+      "info": "This is project 6"
     }
   ],
   "imageFolder": "./img",

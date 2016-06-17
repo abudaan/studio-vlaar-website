@@ -31,7 +31,7 @@ export default class ImageSlider extends Component{
 
 
   render(){
-    //console.log(this.props.animStyle)
+    console.log(this.props.sliderStyle)
 
     let style
     let slides = []
@@ -41,7 +41,7 @@ export default class ImageSlider extends Component{
       slides.push(<div key={i} style={style}></div>)
     })
 
-    style = {...sliderStyle, ...this.props.animStyle, width: `${this.props.width * this.numProjects}px`}
+    style = {...sliderStyle, ...this.props.sliderAnimStyle, width: `${this.props.width * this.numProjects}px`}
 
     if(this.props.touchEnabled === true){
       return <div style={style}> {slides} </div>
@@ -52,10 +52,11 @@ export default class ImageSlider extends Component{
 }
 
 ImageSlider.propTypes = {
-  animStyle: PropTypes.object.isRequired,
+  sliderAnimStyle: PropTypes.object.isRequired,
   imageFolder: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   projects: PropTypes.arrayOf(PropTypes.object).isRequired,
   sliderClicked: PropTypes.func.isRequired,
   width: PropTypes.number.isRequired,
+  touchEnabled: PropTypes.bool,
 }

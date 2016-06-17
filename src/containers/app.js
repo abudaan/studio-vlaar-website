@@ -95,10 +95,8 @@ class App extends Component{
         >
           {component}
           <ProjectInfo
-            showProjectInfo={true}
-            number={100}
-            info={'beren in het bos en op de akkers en in de velden en zo voort en zo verder'}
-            width={this.state.height}
+            showProjectInfo={this.state.showProjectInfo}
+            currentProject={this.state.currentProject}
           />
         </ReactCSSTransitionGroup>
       </div>
