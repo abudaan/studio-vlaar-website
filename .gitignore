@@ -3,4 +3,5 @@ design
 img
 node_modules/
 *.lock
+.sass-cache
 npm-debug.log
