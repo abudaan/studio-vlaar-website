@@ -73,7 +73,7 @@ html, body {
   position: absolute;
   z-index: 3;
   left: 20px; }
-  @media all and (min-height: 768px) {
+  @media all and (min-height: 650px) {
     .menu {
       left: 50px; } }
 
@@ -84,14 +84,14 @@ html, body {
   padding: 20px 0px;
   width: 150px;
   height: 80px; }
-  @media all and (min-height: 768px) {
+  @media all and (min-height: 650px) {
     .menu_logo {
       width: 200px;
       height: 150px; } }
 
 .menu_logo img {
   width: 60px; }
-  @media all and (min-height: 768px) {
+  @media all and (min-height: 650px) {
     .menu_logo img {
       width: 100px; } }
 
@@ -111,7 +111,7 @@ html, body {
   font-size: 15px;
   width: 150px;
   height: 100vh; }
-  @media all and (min-height: 768px) {
+  @media all and (min-height: 650px) {
     .menu_collapsed {
       font-size: 15px;
       width: 200px;
@@ -123,6 +123,15 @@ html, body {
 .close {
   font-family: monospace;
   margin-top: 10px; }
+
+#menu_items_container {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  @media all and (min-height: 650px) {
+    #menu_items_container {
+      height: 200px; } }
 
 #contact_page {
   height: 100vh;
@@ -185,7 +194,7 @@ html, body {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
-  @media all and (min-height: 768px) {
+  @media all and (min-height: 650px) {
     #project_info {
       top: calc(180px + 200px + 10px);
       left: calc(-100vh + 50px);
@@ -201,10 +210,14 @@ html, body {
   color: black;
   line-height: 2em;
   text-align: right;
-  height: 160px;
   width: calc(100% - 40px);
+  height: 130px;
+  position: absolute;
   top: 0;
   right: 0; }
+  @media all and (min-height: 650px) {
+    #project_info_container {
+      height: 160px; } }
 
 .project_info_item {
   width: 100%; }

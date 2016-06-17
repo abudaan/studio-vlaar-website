@@ -68,6 +68,7 @@ class Store extends ReduceStore {
       case ActionTypes.DATA_LOADED:
         currentProject = action.payload.data.projects[0]
         size = Math.max(state.width, state.height)
+        //alert(state.width + ' : ' + state.height)
         return {...state, ...action.payload.data, displayState: DisplayStates.MAIN, currentProject, size}
 
 

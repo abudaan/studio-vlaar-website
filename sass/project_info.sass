@@ -1,3 +1,5 @@
+$break: 650px
+
 =rotate($deg)
   -webkit-transform: rotate($deg)
   -moz-transform: rotate($deg)
@@ -14,7 +16,7 @@
   height: 170px
   font-size: 14px
 
-  @media all and (min-height: 768px)
+  @media all and (min-height: $break)
     top: calc(180px + 200px + 10px)
     left: calc(-100vh + 50px)
     font-size: 15px
@@ -23,7 +25,6 @@
   width: 100vh
   background-color: rgba(255, 255, 255, 0.7)
   transform-origin: right top 0
-
   +rotate(-90deg)
 
 
@@ -36,9 +37,14 @@
   color: black
   line-height: 2em
   text-align: right
-  height: 160px
+
   width: calc(100% - 40px)
-  // position: absolute
+
+  height: 130px
+  @media all and (min-height: $break)
+    height: 160px
+
+  position: absolute
   top: 0
   right: 0
 

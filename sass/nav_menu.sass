@@ -1,10 +1,11 @@
 $small_width: 150px
+$break: 650px
 
 .menu
   position: absolute
   z-index: 3
   left: 20px
-  @media all and (min-height: 768px)
+  @media all and (min-height: $break)
     left: 50px
 
 
@@ -19,7 +20,7 @@ $small_width: 150px
   width: $small_width
   height: 80px
 
-  @media all and (min-height: 768px)
+  @media all and (min-height: $break)
     width: 200px
     height: 150px
 
@@ -28,7 +29,7 @@ $small_width: 150px
 
   width: 60px
 
-  @media all and (min-height: 768px)
+  @media all and (min-height: $break)
     width: 100px
 
 
@@ -52,7 +53,7 @@ $small_width: 150px
   width: $small_width
   height: 100vh
 
-  @media all and (min-height: 768px)
+  @media all and (min-height: $break)
     font-size: 15px
     width: 200px
     height: 200px
@@ -65,3 +66,16 @@ $small_width: 150px
 .close
   font-family: monospace
   margin-top: 10px
+
+
+//@media all and (max-height: 649px)
+#menu_items_container
+  // background-color: pink
+  height: calc(100vh - 120px)
+  @media all and (min-height: $break)
+    height: 200px
+    // background-color: blue
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+

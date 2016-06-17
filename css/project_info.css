@@ -12,7 +12,7 @@
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
-  @media all and (min-height: 768px) {
+  @media all and (min-height: 650px) {
     #project_info {
       top: calc(180px + 200px + 10px);
       left: calc(-100vh + 50px);
@@ -28,10 +28,14 @@
   color: black;
   line-height: 2em;
   text-align: right;
-  height: 160px;
   width: calc(100% - 40px);
+  height: 130px;
+  position: absolute;
   top: 0;
   right: 0; }
+  @media all and (min-height: 650px) {
+    #project_info_container {
+      height: 160px; } }
 
 .project_info_item {
   width: 100%; }

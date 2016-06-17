@@ -39,26 +39,26 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
 
   if(displayState === DisplayStates.CONTACT){
     menuItems = (
-      <div>
+      <div id={'menu_items_container'}>
         <div className={'menu_link'} id={'contact'} onClick={menuClicked}>{'contact'}</div>
-        <div>{'-'}</div>
+        <div className={'separator2'} >{'-'}</div>
         <div className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>
-        <div>{'-'}</div>
+        <div className={'separator2'}>{'-'}</div>
         <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
-        <div>{'-'}</div>
+        <div className={'separator2'}>{'-'}</div>
         <div className={'menu_link'} id={'project'} onClick={menuClicked}>{'project'}</div>
         <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
       </div>
     )
   }else{
     menuItems = (
-      <div>
+      <div id={'menu_items_container'}>
         <div className={'menu_link'} id={'contact'} onClick={menuClicked}>{'contact'}</div>
-        <div>{'-'}</div>
+        <div className={'separator2'}>{'-'}</div>
         <div className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>
-        <div>{'-'}</div>
+        <div className={'separator2'}>{'-'}</div>
         <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
-        <div>{'-'}</div>
+        <div className={'separator2'}>{'-'}</div>
         <div className={'menu_link'} id={'project'} onClick={menuClicked}>{'project'}</div>
         <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
       </div>
