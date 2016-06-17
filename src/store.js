@@ -15,6 +15,7 @@ class Store extends ReduceStore {
       displayState: DisplayStates.LOADING,
       width: window.innerWidth,
       height: window.innerHeight,
+      size: window.innerWidth,
       index: 0,
       sliderAnimStyle: {
         left: 0
@@ -57,21 +58,26 @@ class Store extends ReduceStore {
 
   reduce(state, action) {
 
+    let size
     let operation
+    let currentProject
+    let sliderAnimStyle
 
     switch(action.type) {
 
       case ActionTypes.DATA_LOADED:
-        let currentProject = action.payload.data.projects[0]
-        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN, currentProject}
+        currentProject = action.payload.data.projects[0]
+        size = Math.max(state.width, state.height)
+        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN, currentProject, size}
 
 
       case ActionTypes.SET_SIZE:
-        let sliderAnimStyle = {
+        sliderAnimStyle = {
           left: -state.index * action.payload.width,
           transition: '0s'
         }
-        return {...state, sliderAnimStyle, width: action.payload.width, height: action.payload.height}
+        size = Math.max(state.width, state.height)
+        return {...state, sliderAnimStyle, width: action.payload.width, height: action.payload.height, size}
 
 
       case ActionTypes.SLIDER_CLICKED:
@@ -138,6 +144,9 @@ class Store extends ReduceStore {
 
       case ActionTypes.HIDE_MENU:
         return {...state, showMenu: false}
+
+      case ActionTypes.HIDE_PROJECT_INFO:
+        return {...state, showProjectInfo: false}
 
       case ActionTypes.HIDE_CONTACT:
         return {...state, displayState: DisplayStates.MAIN}

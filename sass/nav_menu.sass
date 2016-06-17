@@ -1,12 +1,11 @@
 $small_width: 150px
 
-
 .menu
   position: absolute
   z-index: 3
-  left: 50px
-  @media all and (max-width: 768px)
-    left: 20px
+  left: 20px
+  @media all and (min-height: 768px)
+    left: 50px
 
 
 
@@ -16,18 +15,21 @@ $small_width: 150px
   cursor: pointer
   text-align: center
   padding: 20px 0px
-  width: 200px
-  height: 150px
 
-  @media all and (max-width: 768px)
-    width: $small_width
-    height: 80px
+  width: $small_width
+  height: 80px
+
+  @media all and (min-height: 768px)
+    width: 200px
+    height: 150px
 
 
 .menu_logo img
-  width: 100px
-  @media all and (max-width: 768px)
-    width: 60px
+
+  width: 60px
+
+  @media all and (min-height: 768px)
+    width: 100px
 
 
 .menu_anim_container
@@ -47,14 +49,13 @@ $small_width: 150px
   line-height: 1.5em
 
   font-size: 15px
-  width: 200px
-  height: 180px
+  width: $small_width
+  height: 100vh
 
-  @media all and (max-width: 768px)
+  @media all and (min-height: 768px)
     font-size: 15px
-    width: $small_width
-    //height: auto
-    height: 100vh
+    width: 200px
+    height: 200px
 
 
 .menu_link
@@ -62,4 +63,5 @@ $small_width: 150px
 
 
 .close
-  margin-top: 5px
+  font-family: monospace
+  margin-top: 10px

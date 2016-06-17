@@ -47,7 +47,7 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
         <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
         <div>{'-'}</div>
         <div className={'menu_link'} id={'project'} onClick={menuClicked}>{'project'}</div>
-        <div className={'menu_link'} id={'close'} onClick={hideMenu}>{'x'}</div>
+        <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
       </div>
     )
   }else{
@@ -60,7 +60,7 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
         <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
         <div>{'-'}</div>
         <div className={'menu_link'} id={'project'} onClick={menuClicked}>{'project'}</div>
-        <div className={'menu_link'} class={'close'} onClick={hideMenu}>{'x'}</div>
+        <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
       </div>
     )
   }

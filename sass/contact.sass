@@ -1,5 +1,5 @@
-$w1: 290px //200 + 50 + 40
-$w2: 170px //150 + 20
+$w1: 300px //200 + 50 + 50
+$w2: 190px //150 + 20 + 2-
 
 #contact_page
   height: 100vh
@@ -12,9 +12,9 @@ $w2: 170px //150 + 20
   float: left
   height: inherit
 
-  width: calc((100% - 290px)/2)
+  width: calc((100% - 300px)/2)
   @media all and (max-width: 768px)
-    width: calc((100% - 170px) * 0.45)
+    width: calc((100% - 190px) * 0.45)
 
 
 #photo_pascal img
@@ -27,15 +27,17 @@ $w2: 170px //150 + 20
   align-items: center
   float: left
   height: inherit
+  line-height: 1.7em
   background-color: rgba(255, 255, 255, 0.8)
-  font-size: 20px
 
-  margin-left: 290px
-  width: calc((100% - 290px)/2)
-  @media all and (max-width: 768px)
-    width: calc((100% - 170px) * 0.55)
-    margin-left: 170px
-    font-size: 14px
+  width: calc((100% - 190px) * 0.55)
+  margin-left: $w2
+  font-size: 15px
+
+  @media all and (min-height: 768px)
+    margin-left: 300px
+    width: calc((100% - 300px)/2)
+    font-size: 20px
 
 #contact_content_container
   align-self: center
@@ -44,7 +46,7 @@ $w2: 170px //150 + 20
 .contact_item,
 .separator
   text-align: center
-  padding: 10px 0
+  padding: 7px 0
   width: 100%
 
 /*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only*/

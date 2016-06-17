@@ -72,28 +72,28 @@ html, body {
 .menu {
   position: absolute;
   z-index: 3;
-  left: 50px; }
-  @media all and (max-width: 768px) {
+  left: 20px; }
+  @media all and (min-height: 768px) {
     .menu {
-      left: 20px; } }
+      left: 50px; } }
 
 .menu_logo {
   background-color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
   text-align: center;
   padding: 20px 0px;
-  width: 200px;
-  height: 150px; }
-  @media all and (max-width: 768px) {
+  width: 150px;
+  height: 80px; }
+  @media all and (min-height: 768px) {
     .menu_logo {
-      width: 150px;
-      height: 80px; } }
+      width: 200px;
+      height: 150px; } }
 
 .menu_logo img {
-  width: 100px; }
-  @media all and (max-width: 768px) {
+  width: 60px; }
+  @media all and (min-height: 768px) {
     .menu_logo img {
-      width: 60px; } }
+      width: 100px; } }
 
 .menu_anim_container {
   background-color: rgba(0, 0, 0, 0.4);
@@ -109,19 +109,20 @@ html, body {
   color: white;
   line-height: 1.5em;
   font-size: 15px;
-  width: 200px;
-  height: 180px; }
-  @media all and (max-width: 768px) {
+  width: 150px;
+  height: 100vh; }
+  @media all and (min-height: 768px) {
     .menu_collapsed {
       font-size: 15px;
-      width: 150px;
-      height: 100vh; } }
+      width: 200px;
+      height: 200px; } }
 
 .menu_link {
   cursor: pointer; }
 
 .close {
-  margin-top: 5px; }
+  font-family: monospace;
+  margin-top: 10px; }
 
 #contact_page {
   height: 100vh;
@@ -132,10 +133,10 @@ html, body {
   display: inline-block;
   float: left;
   height: inherit;
-  width: calc((100% - 290px)/2); }
+  width: calc((100% - 300px)/2); }
   @media all and (max-width: 768px) {
     #photo_pascal {
-      width: calc((100% - 170px) * 0.45); } }
+      width: calc((100% - 190px) * 0.45); } }
 
 #photo_pascal img {
   height: 100%; }
@@ -145,15 +146,16 @@ html, body {
   align-items: center;
   float: left;
   height: inherit;
+  line-height: 1.7em;
   background-color: rgba(255, 255, 255, 0.8);
-  font-size: 20px;
-  margin-left: 290px;
-  width: calc((100% - 290px)/2); }
-  @media all and (max-width: 768px) {
+  width: calc((100% - 190px) * 0.55);
+  margin-left: 190px;
+  font-size: 15px; }
+  @media all and (min-height: 768px) {
     #contact_content {
-      width: calc((100% - 170px) * 0.55);
-      margin-left: 170px;
-      font-size: 14px; } }
+      margin-left: 300px;
+      width: calc((100% - 300px)/2);
+      font-size: 20px; } }
 
 #contact_content_container {
   align-self: center;
@@ -162,7 +164,7 @@ html, body {
 .contact_item,
 .separator {
   text-align: center;
-  padding: 10px 0;
+  padding: 7px 0;
   width: 100%; }
 
 /*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only */
@@ -172,10 +174,10 @@ html, body {
 #project_info {
   position: absolute;
   z-index: 3;
-  top: calc(180px + 190px);
-  left: calc(-100vh + 50px);
+  top: 0px;
+  left: calc(-100vh + 190px);
+  height: 170px;
   font-size: 14px;
-  height: 200px;
   width: 100vh;
   background-color: rgba(255, 255, 255, 0.7);
   transform-origin: right top 0;
@@ -183,23 +185,32 @@ html, body {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
-  @media all and (max-width: 768px) {
+  @media all and (min-height: 768px) {
     #project_info {
-      top: 0px;
-      left: calc(-100vh + 200px);
-      height: 170px;
-      font-size: 15px; } }
+      top: calc(180px + 200px + 10px);
+      left: calc(-100vh + 50px);
+      font-size: 15px;
+      height: 200px; } }
 
-.project_info_text {
+#project_info_container {
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
   padding: 20px;
   color: black;
   line-height: 2em;
   text-align: right;
   height: 160px;
   width: calc(100% - 40px);
-  position: absolute;
   top: 0;
   right: 0; }
+
+.project_info_item {
+  width: 100%; }
+
+#project_info_container :last-child {
+  margin-top: auto; }
 
 .component-enter {
   opacity: 0.01; }
@@ -227,13 +238,13 @@ html, body {
 
 .project_info-enter.project_info-enter-active {
   opacity: 1;
-  transition: opacity 300ms linear; }
+  transition: opacity 200ms linear; }
 
 .project_info-leave {
   opacity: 1; }
 
 .project_info-leave.project_info-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms linear; }
+  transition: opacity 200ms linear; }
 
 /*# sourceMappingURL=app.css.map */

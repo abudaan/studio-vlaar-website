@@ -9,32 +9,42 @@
   position: absolute
   z-index: 3
 
-  top: calc(180px + 190px)
-  left: calc(-100vh + 50px)
-
-  @media all and (max-width: 768px)
-    top: 0px
-    left: calc(-100vh + 200px)
-    height: 170px
-    font-size: 15px
-
+  top: 0px
+  left: calc(-100vh + 190px)
+  height: 170px
   font-size: 14px
-  height: 200px
+
+  @media all and (min-height: 768px)
+    top: calc(180px + 200px + 10px)
+    left: calc(-100vh + 50px)
+    font-size: 15px
+    height: 200px
+
   width: 100vh
   background-color: rgba(255, 255, 255, 0.7)
   transform-origin: right top 0
+
   +rotate(-90deg)
 
 
-.project_info_text
+#project_info_container
+  display: flex
+  align-content: flex-start
+  justify-content: flex-start
+  flex-direction: column
   padding: 20px
   color: black
   line-height: 2em
   text-align: right
   height: 160px
   width: calc(100% - 40px)
-  position: absolute
+  // position: absolute
   top: 0
   right: 0
 
 
+.project_info_item
+  width: 100%
+
+#project_info_container :last-child
+  margin-top: auto

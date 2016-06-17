@@ -11,7 +11,7 @@ const Contact = ({contact, hideContact}) => {
           <div className={'contact_item'}>Pascal Vlaar<br/>06 460.414.59</div>
           <div className={'separator'}>{'-'}</div>
           <div className={'contact_item'}><span className={'e-mail'}></span></div>
-          <div className={'menu_link contact_item'} class={'close'} onClick={hideContact}>{'x'}</div>
+          <div className={'contact_item close'} onClick={hideContact}>{'x'}</div>
         </div>
       </div>
       <div id={'photo_pascal'}><img src={'./img/pascal2.jpg'}></img></div>

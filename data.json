@@ -2,39 +2,75 @@
   "projects": [
     {
       "id": 100,
-      "title": "project1",
-      "image": "project1.jpg",
-      "info": "beren in het bos en op \\nde akkers en in de velden en zo voort en zo verder"
+      "image": {
+        "small": "project1_small.jpg",
+        "large": "project1_large.jpg"
+      },
+      "info": "UHD entree"
     },
     {
       "id": 101,
-      "title": "project2",
-      "image": "project2.jpg",
-      "info": "This is project 2"
+      "image": {
+        "small": "project2_small.jpg",
+        "large": "project2_large.jpg"
+      },
+      "info": "Uitbouw"
     },
     {
       "id": 102,
-      "title": "project3",
-      "image": "project3.jpg",
-      "info": "This is project 3"
+      "image": {
+        "small": "project3_small.jpg",
+        "large": "project3_large.jpg"
+      },
+      "info": "This is project description\\n with a line break"
     },
     {
       "id": 103,
-      "title": "project4",
-      "image": "project4.jpg",
-      "info": "This is project 4"
+      "image": {
+        "small": "project4_small.jpg",
+        "large": "project4_large.jpg"
+      },
+      "info": "This is project description\\n with a line break\\n and yet another line break"
     },
     {
       "id": 104,
-      "title": "project5",
-      "image": "project5.jpg",
-      "info": "This is project 5"
+      "image": {
+        "small": "project5_small.jpg",
+        "large": "project5_large.jpg"
+      },
+      "info": "This is another project"
     },
     {
       "id": 105,
-      "title": "project6",
-      "image": "project6.jpg",
-      "info": "This is project 6"
+      "image": {
+        "small": "project6_small.jpg",
+        "large": "project6_large.jpg"
+      },
+      "info": "This is another project"
+    },
+    {
+      "id": 106,
+      "image": {
+        "small": "project7_small.jpg",
+        "large": "project7_large.jpg"
+      },
+      "info": "This is another project"
+    },
+    {
+      "id": 107,
+      "image": {
+        "small": "project8_small.jpg",
+        "large": "project8_large.jpg"
+      },
+      "info": "This is another project"
+    },
+    {
+      "id": 108,
+      "image": {
+        "small": "project9_small.jpg",
+        "large": "project9_large.jpg"
+      },
+      "info": "This is another project"
     }
   ],
   "imageFolder": "./portfolio",

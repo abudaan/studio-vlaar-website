@@ -96,6 +96,7 @@ class App extends Component{
           {component}
           <ProjectInfo
             showProjectInfo={this.state.showProjectInfo}
+            hideProjectInfo={Actions.hideProjectInfo}
             currentProject={this.state.currentProject}
           />
         </ReactCSSTransitionGroup>

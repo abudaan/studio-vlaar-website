@@ -31,10 +31,15 @@ export default class ImageSlider extends Component{
 
 
   render(){
+    let url
     let style
     let slides = []
     this.props.projects.forEach((project, i) => {
-      let url = `${this.imageFolder}/${project.image}`
+      if(this.props.size <= 1024){
+        url = `${this.imageFolder}/${project.image.small}`
+      }else{
+        url = `${this.imageFolder}/${project.image.large}`
+      }
       style = {...divStyle, backgroundImage: `url(${url})`, width: this.props.width}
       slides.push(<div key={i} style={style}></div>)
     })

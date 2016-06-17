@@ -59,6 +59,13 @@ export default {
   },
 
 
+  hideProjectInfo(){
+    AppDispatcher.dispatch({
+      type: ActionTypes.HIDE_PROJECT_INFO,
+    })
+  },
+
+
   hideContact(){
     AppDispatcher.dispatch({
       type: ActionTypes.HIDE_CONTACT,
