@@ -7,13 +7,14 @@
   display: inline-block;
   float: left;
   height: inherit;
-  width: calc((100% - 300px)/2); }
-  @media all and (max-width: 768px) {
+  width: calc((100% - 190px) * 0.45); }
+  @media all and (min-height: 650px) {
     #photo_pascal {
-      width: calc((100% - 190px) * 0.45); } }
+      width: calc((100% - 300px) * 0.45); } }
 
 #photo_pascal img {
-  height: 100%; }
+  width: 100%;
+  height: auto; }
 
 #contact_content {
   display: inline-flex;
@@ -25,10 +26,10 @@
   width: calc((100% - 190px) * 0.55);
   margin-left: 190px;
   font-size: 15px; }
-  @media all and (min-height: 768px) {
+  @media all and (min-height: 650px) {
     #contact_content {
       margin-left: 300px;
-      width: calc((100% - 300px)/2);
+      width: calc((100% - 300px) * 0.55);
       font-size: 20px; } }
 
 #contact_content_container {

@@ -1,5 +1,8 @@
+// width of menu plus gutter twice
 $w1: 300px //200 + 50 + 50
-$w2: 190px //150 + 20 + 2-
+$w2: 190px //150 + 20 + 20
+// height of ipad viewport minus address bar and such
+$break: 650px
 
 #contact_page
   height: 100vh
@@ -12,14 +15,14 @@ $w2: 190px //150 + 20 + 2-
   float: left
   height: inherit
 
-  width: calc((100% - 300px)/2)
-  @media all and (max-width: 768px)
-    width: calc((100% - 190px) * 0.45)
+  width: calc((100% - 190px) * 0.45)
+  @media all and (min-height: $break)
+    width: calc((100% - 300px) * 0.45)
 
 
 #photo_pascal img
-  height: 100%
-  // width: auto
+  width: 100%
+  height: auto
 
 
 #contact_content
@@ -31,12 +34,12 @@ $w2: 190px //150 + 20 + 2-
   background-color: rgba(255, 255, 255, 0.8)
 
   width: calc((100% - 190px) * 0.55)
-  margin-left: $w2
+  margin-left: 190px
   font-size: 15px
 
-  @media all and (min-height: 768px)
+  @media all and (min-height: $break)
     margin-left: 300px
-    width: calc((100% - 300px)/2)
+    width: calc((100% - 300px) * 0.55)
     font-size: 20px
 
 #contact_content_container
