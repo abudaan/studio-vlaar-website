@@ -2,6 +2,11 @@ import React, {PropTypes} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
+function createInfo({id, info}){
+  let html = `#${id}<br/>-<br/>${info.replace(/\\n/g, '<br/>')}`
+  return {__html: html};
+}
+
 const ProjectInfo = ({showProjectInfo, currentProject}) => {
 /*
   let menu = document.getElementsByClassName('menu_collapsed')[0]
@@ -46,11 +51,11 @@ const ProjectInfo = ({showProjectInfo, currentProject}) => {
           transitionEnterTimeout={250}
           transitionLeaveTimeout={250}
         >
-          <div key={currentProject.id} className={'project_info_text'}>
-            {`#${currentProject.id}`}<br/>
-            {'-'}<br/>
-            {currentProject.info}
-          </div>
+          <div
+            key={currentProject.id}
+            className={'project_info_text'}
+            dangerouslySetInnerHTML={createInfo(currentProject)}
+          />
         </ReactCSSTransitionGroup>
 
       </div>
