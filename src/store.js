@@ -111,9 +111,9 @@ class Store extends ReduceStore {
 
           case 'contact':
             if(state.displayState === DisplayStates.MAIN){
-              return {...state, displayState: DisplayStates.CONTACT}
+              return {...state, displayState: DisplayStates.CONTACT, showProjectInfo: false}
             }
-            return {...state, displayState: DisplayStates.MAIN}
+            return {...state, displayState: DisplayStates.MAIN, showProjectInfo: false}
 
           case 'project':
             if(state.displayState !== DisplayStates.MAIN){

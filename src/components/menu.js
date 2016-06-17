@@ -73,7 +73,7 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
   return (
     <div className={'menu'}>
       <div className={'menu_logo'} style={divStyle}>
-        <img id={'logo'} src='./img/logo.svg' onClick={logoClicked}></img><br/>
+        <img id={'logo'} src={'./img/logo.svg'} onClick={logoClicked}></img><br/>
       </div>
       <div style={animStyle1} className={'menu_anim_container'}>
         <div style={animStyle2} className={'menu_collapsed'}>

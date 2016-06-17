@@ -1,0 +1,36 @@
+.component-enter {
+  opacity: 0.01; }
+
+.component-enter.component-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear; }
+
+.component-leave {
+  opacity: 1; }
+
+.component-leave.component-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms linear; }
+
+.component-appear {
+  opacity: 0.01; }
+
+.component-appear.component-appear-active {
+  opacity: 1;
+  transition: opacity 500ms linear; }
+
+.project_info-enter {
+  opacity: 0.01; }
+
+.project_info-enter.project_info-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear; }
+
+.project_info-leave {
+  opacity: 1; }
+
+.project_info-leave.project_info-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms linear; }
+
+/*# sourceMappingURL=react_anim.css.map */

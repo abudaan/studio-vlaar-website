@@ -48,8 +48,8 @@ const ProjectInfo = ({showProjectInfo, currentProject}) => {
       <div key={'project_info'} id={'project_info'}>
         <ReactCSSTransitionGroup
           transitionName={'project_info'}
-          transitionEnterTimeout={250}
-          transitionLeaveTimeout={250}
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
         >
           <div
             key={currentProject.id}
@@ -65,8 +65,8 @@ const ProjectInfo = ({showProjectInfo, currentProject}) => {
   return (
     <ReactCSSTransitionGroup
       transitionName={'project_info'}
-      transitionEnterTimeout={250}
-      transitionLeaveTimeout={250}
+      transitionEnterTimeout={300}
+      transitionLeaveTimeout={300}
     >
       {child}
     </ReactCSSTransitionGroup>

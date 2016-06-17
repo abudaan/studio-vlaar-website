@@ -1,0 +1,13 @@
+html, body {
+  background-color: black;
+  overflow: hidden;
+  font-family: "libre_baskervilleregular";
+  width: 100%;
+  height: 100%;
+  color: #333; }
+
+#app {
+  width: 100%;
+  height: 100%; }
+
+/*# sourceMappingURL=app_main.css.map */

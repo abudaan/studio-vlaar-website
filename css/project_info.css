@@ -1,0 +1,27 @@
+#project_info {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  top: 0px;
+  left: calc(-100vh + 300px);
+  height: 200px;
+  width: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform-origin: right top 0;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+.project_info_text {
+  padding: 20px;
+  color: black;
+  line-height: 2em;
+  text-align: right;
+  height: 160px;
+  width: calc(100% - 40px);
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+/*# sourceMappingURL=project_info.css.map */

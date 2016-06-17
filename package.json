@@ -40,7 +40,7 @@
     "react-dom": "*"
   },
   "scripts": {
-    "watch-sass": "sass --scss --watch scss:css",
+    "watch-sass": "sass --watch sass:css",
     "watch": "watchify src/index.js -t [ babelify ] -o build/app.js --debug --verbose",
     "build": "browserify src/index.js -t [ babelify ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
   }
