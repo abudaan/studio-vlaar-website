@@ -54,7 +54,7 @@ class App extends Component{
   }
 
   render(){
-
+    return
     let component = null
 
     switch(this.state.displayState){
