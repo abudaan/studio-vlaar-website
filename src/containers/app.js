@@ -59,8 +59,8 @@ class App extends Component{
 
     switch(this.state.displayState){
 
-      case DisplayStates.LOADING:
-        component = <div key={'loading'} >{'loading...'}</div>
+      case DisplayStates.MESSAGE:
+        component = <div key={'loading'} id="message">{this.state.message}</div>
         break
 
       case DisplayStates.MAIN:

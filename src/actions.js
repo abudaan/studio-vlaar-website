@@ -3,8 +3,14 @@ import * as ActionTypes from './constants/action_types'
 
 export default {
 
-  dataLoaded(data){
+  message(message){
+    AppDispatcher.dispatch({
+      type: ActionTypes.MESSAGE,
+      payload: {message}
+    })
+  },
 
+  dataLoaded(data){
     AppDispatcher.dispatch({
       type: ActionTypes.DATA_LOADED,
       payload: {data}

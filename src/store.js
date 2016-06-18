@@ -12,7 +12,8 @@ class Store extends ReduceStore {
       ...getBrowser(),
       projects: [],
       imageFolder: '',
-      displayState: DisplayStates.LOADING,
+      displayState: DisplayStates.MESSAGE,
+      message: 'loading...',
       width: window.innerWidth,
       height: window.innerHeight,
       size: window.innerWidth,
@@ -64,6 +65,10 @@ class Store extends ReduceStore {
     let sliderAnimStyle
 
     switch(action.type) {
+
+      case ActionTypes.MESSAGE:
+        return {...state, ...action.payload, displayState: DisplayStates.MESSAGE}
+
 
       case ActionTypes.DATA_LOADED:
         currentProject = action.payload.data.projects[0]
