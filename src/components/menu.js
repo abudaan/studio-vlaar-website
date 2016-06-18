@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import * as DisplayStates from '../constants/display_states'
 
 
-const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
+const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showProjectInfo}) => {
 
   let menu = document.getElementsByClassName('menu_collapsed')[0]
   let animStyle1 = {}
@@ -36,34 +36,29 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
 
 
   let menuItems
+  let contactClass = 'menu_link'
+  let projectClass = 'menu_link'
 
   if(displayState === DisplayStates.CONTACT){
-    menuItems = (
-      <div id={'menu_items_container'}>
-        <div className={'menu_link'} id={'contact'} onClick={menuClicked}>{'contact'}</div>
-        <div className={'separator2'} >{'-'}</div>
-        <div className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>
-        <div className={'separator2'}>{'-'}</div>
-        <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
-        <div className={'separator2'}>{'-'}</div>
-        <div className={'menu_link'} id={'project'} onClick={menuClicked}>{'project'}</div>
-        <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
-      </div>
-    )
-  }else{
-    menuItems = (
-      <div id={'menu_items_container'}>
-        <div className={'menu_link'} id={'contact'} onClick={menuClicked}>{'contact'}</div>
-        <div className={'separator2'}>{'-'}</div>
-        <div className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>
-        <div className={'separator2'}>{'-'}</div>
-        <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
-        <div className={'separator2'}>{'-'}</div>
-        <div className={'menu_link'} id={'project'} onClick={menuClicked}>{'project'}</div>
-        <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
-      </div>
-    )
+    contactClass = 'menu_link menu_link_selected'
   }
+
+  if(showProjectInfo === true){
+    projectClass = 'menu_link menu_link_selected'
+  }
+
+  menuItems = (
+    <div id={'menu_items_container'}>
+      <div className={contactClass} id={'contact'} onClick={menuClicked}>{'contact'}</div>
+      <div className={'separator2'} >{'-'}</div>
+      <div className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>
+      <div className={'separator2'}>{'-'}</div>
+      <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
+      <div className={'separator2'}>{'-'}</div>
+      <div className={projectClass} id={'project'} onClick={menuClicked}>{'project'}</div>
+      <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
+    </div>
+  )
 
   return (
     <div className={'menu'}>
@@ -81,11 +76,12 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState}) => {
 
 
 Menu.propTypes = {
-  showMenu: PropTypes.bool.isRequired,
+  displayState: PropTypes.string.isRequired,
+  hideMenu: PropTypes.func.isRequired,
   logoClicked: PropTypes.func.isRequired,
   menuClicked: PropTypes.func.isRequired,
-  hideMenu: PropTypes.func.isRequired,
-  displayState: PropTypes.string.isRequired,
+  showMenu: PropTypes.bool.isRequired,
+  showProjectInfo: PropTypes.bool.isRequired,
 }
 
 export default Menu

@@ -120,9 +120,14 @@ html, body {
 .menu_link {
   cursor: pointer; }
 
+.menu_link_selected {
+  font-weight: normal;
+  text-decoration: underline; }
+
 .close {
   font-family: monospace;
-  margin-top: 10px; }
+  margin-top: 10px;
+  cursor: pointer; }
 
 #menu_items_container {
   height: calc(100vh - 120px);
@@ -176,11 +181,14 @@ html, body {
   text-align: center;
   padding: 7px 0;
   width: 100%; }
+  .contact_item a,
+  .separator a {
+    text-decoration: none; }
+  .contact_item a:hover,
+  .separator a:hover {
+    text-decoration: none; }
 
 /*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only */
-.e-mail:before {
-  content: "pascal@studiovlaar.nl"; }
-
 #project_info {
   position: absolute;
   z-index: 3;

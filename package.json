@@ -1,5 +1,5 @@
 {
-  "name": "pinterest-slider-redux",
+  "name": "studio-vlaar",
   "private": false,
   "devDependencies": {
     "babel-eslint": "*",
@@ -15,7 +15,7 @@
     "eslint-plugin-react": "*",
     "exorcist": "*",
     "local-web-server": "*",
-    "uglify": "*",
+    "uglify-js": "*",
     "watchify": "*"
   },
   "engines": {

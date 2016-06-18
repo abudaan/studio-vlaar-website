@@ -79,11 +79,10 @@ class App extends Component{
     return (
       <div>
         <Menu
-          displayState={this.state.displayState}
-          showMenu={this.state.showMenu}
+          {...this.state}
+          hideMenu={Actions.hideMenu}
           logoClicked={Actions.logoClicked}
           menuClicked={Actions.menuClicked}
-          hideMenu={Actions.hideMenu}
         />
         <ReactCSSTransitionGroup
           component={'div'}

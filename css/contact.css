@@ -41,9 +41,13 @@
   text-align: center;
   padding: 7px 0;
   width: 100%; }
+  .contact_item a,
+  .separator a {
+    text-decoration: none; }
+  .contact_item a:hover,
+  .separator a:hover {
+    text-decoration: none; }
 
 /*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only */
-.e-mail:before {
-  content: "pascal@studiovlaar.nl"; }
 
 /*# sourceMappingURL=contact.css.map */
