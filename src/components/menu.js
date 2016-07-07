@@ -63,7 +63,8 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
   return (
     <div className={'menu'}>
       <div className={'menu_logo'}>
-        <img id={'logo'} onClick={logoClicked} src={'./img/logo.svg'}></img><br/>
+        <img id={'menu_logo_img_mobile'} src={'./img/logo-mobile.svg'} onClick={logoClicked}></img><br/>
+        <img id={'menu_logo_img_desktop'} src={'./img/logo-desktop.svg'} onClick={logoClicked}></img><br/>
       </div>
       <div className={'menu_anim_container'} style={animStyle1}>
         <div className={'menu_collapsed'} style={animStyle2}>

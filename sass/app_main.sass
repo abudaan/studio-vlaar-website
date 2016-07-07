@@ -1,6 +1,7 @@
 =rotate($deg)
   -webkit-transform: rotate($deg)
   -moz-transform: rotate($deg)
+  -o-transform: rotate($deg)
   -ms-transform: rotate($deg)
   transform: rotate($deg)
 
@@ -16,6 +17,20 @@ html, body
 #app
   width: 100%
   height: 100%
+  display: block
+
+
+@media only screen and (orientation:portrait)
+  #app
+    height: 100vw
+    +rotate(90deg)
+
+
+@media only screen and (orientation:landscape)
+  #app
+    +rotate(0deg)
+
+
 
   //@media all and (orientation: portrait)
     // position: absolute

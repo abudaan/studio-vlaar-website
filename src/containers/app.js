@@ -30,23 +30,37 @@ class App extends Component{
     super()
     this.index = Store.getState().index
     this._windowResizeListener = this._handleResize.bind(this)
+    this._deviceOrientationListener = this._handleOrientation.bind(this)
+    this._windowKeyPressListener = this._handleKeyPress.bind(this)
     this._swipeListener = this._handleSwipe.bind(this)
     fetchJSON('./data.json')
     .then(Actions.dataLoaded)
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this._windowResizeListener)
+    document.addEventListener('keydown', this._windowKeyPressListener)
     document.addEventListener('swipe', this._swipeListener)
+    window.addEventListener('resize', this._windowResizeListener)
+    window.addEventListener('orientationchange', this._deviceOrientationListener)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this._windowResizeListener)
+    document.removeEventListener('keydown', this._windowKeyPressListener)
     document.removeEventListener('swipe', this._swipeListener)
+    window.removeEventListener('resize', this._windowResizeListener)
+    window.removeEventListener('orientationchange', this._deviceOrientationListener)
   }
 
   _handleResize(){
     Actions.setSize()
+  }
+
+  _handleOrientation(){
+    Actions.setOrientation()
+  }
+
+  _handleKeyPress(e){
+    Actions.sliderKeyPress(e)
   }
 
   _handleSwipe(e){
@@ -54,7 +68,6 @@ class App extends Component{
   }
 
   render(){
-    return
     let component = null
 
     switch(this.state.displayState){

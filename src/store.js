@@ -17,6 +17,7 @@ class Store extends ReduceStore {
       width: window.innerWidth,
       height: window.innerHeight,
       size: window.innerWidth,
+      orientation: 'landscape',
       index: 0,
       sliderAnimStyle: {
         left: 0
@@ -57,12 +58,44 @@ class Store extends ReduceStore {
   }
 
 
+  calculateStateBySizeAndOrientation(state){
+    let orientation = screen.orientation || screen.oOrientation || screen.mozOrientation || screen.msOrientation || screen.webkitOrientation
+    let width = window.innerWidth
+    let height = window.innerHeight
+    let size
+    let sliderAnimStyle
+
+    if(typeof orientation === 'undefined'){
+      if(width > height){
+        orientation = 'landscape'
+      }else{
+        orientation = 'portrait'
+      }
+    }
+    if(typeof orientation.type !== 'undefined'){
+      orientation = orientation.type
+    }
+    if(orientation.indexOf('portrait') !== -1){
+      orientation = 'portrait'
+      width = window.innerHeight
+      height = window.innerWidth
+    }else if(orientation.indexOf('landscape') !== -1){
+      orientation = 'landscape'
+    }
+
+    sliderAnimStyle = {
+      left: -state.index * width,
+      transition: '0s'
+    }
+    size = Math.max(state.width, state.height)
+
+    return {...state, size, sliderAnimStyle, width, height, orientation}
+  }
+
   reduce(state, action) {
 
-    let size
     let operation
     let currentProject
-    let sliderAnimStyle
 
     switch(action.type) {
 
@@ -72,18 +105,13 @@ class Store extends ReduceStore {
 
       case ActionTypes.DATA_LOADED:
         currentProject = action.payload.data.projects[0]
-        size = Math.max(state.width, state.height)
-        //alert(state.width + ' : ' + state.height)
-        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN, currentProject, size}
+        let {width, height, size, orientation} = this.calculateStateBySizeAndOrientation(state)
+        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN, currentProject, size, width, height, orientation}
 
 
       case ActionTypes.SET_SIZE:
-        sliderAnimStyle = {
-          left: -state.index * action.payload.width,
-          transition: '0s'
-        }
-        size = Math.max(state.width, state.height)
-        return {...state, sliderAnimStyle, width: action.payload.width, height: action.payload.height, size}
+      case ActionTypes.SET_ORIENTATION:
+        return this.calculateStateBySizeAndOrientation(state)
 
 
       case ActionTypes.SLIDER_CLICKED:
@@ -103,9 +131,35 @@ class Store extends ReduceStore {
 
         let direction = action.payload.event.detail.direction
 
-        if(direction === 'right'){
+        if(state.orientation === 'landscape'){
+          if(direction === 'right'){
+            operation = '-'
+          }else if(direction === 'left'){
+            operation = '+'
+          }
+        }else{
+          if(direction === 'down'){
+            operation = '-'
+          }else if(direction === 'up'){
+            operation = '+'
+          }
+        }
+
+        return this.calculateStateByIndex(operation, state)
+
+
+      case ActionTypes.SLIDER_KEYPRESS:
+        //console.log(action.payload.event)
+        let evt = action.payload.event
+        let keycode = evt.keyCode
+
+        if(keycode === 37){
+          evt.defaultPrevented
+          evt.preventDefault()
           operation = '-'
-        }else if(direction === 'left'){
+        }else if(keycode === 39){
+          evt.defaultPrevented
+          evt.preventDefault()
           operation = '+'
         }
 

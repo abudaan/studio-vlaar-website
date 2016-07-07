@@ -27,6 +27,12 @@ export default {
     })
   },
 
+  setOrientation(){
+    AppDispatcher.dispatch({
+      type: ActionTypes.SET_ORIENTATION,
+    })
+  },
+
 
   sliderClicked(event){
     AppDispatcher.dispatch({
@@ -39,6 +45,14 @@ export default {
   sliderSwiped(event){
     AppDispatcher.dispatch({
       type: ActionTypes.SLIDER_SWIPED,
+      payload: {event}
+    })
+  },
+
+
+  sliderKeyPress(event){
+    AppDispatcher.dispatch({
+      type: ActionTypes.SLIDER_KEYPRESS,
       payload: {event}
     })
   },

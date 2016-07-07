@@ -44,7 +44,8 @@
   width: 100%; }
   .contact_item a,
   .separator a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #333; }
   .contact_item a:hover,
   .separator a:hover {
     text-decoration: none; }

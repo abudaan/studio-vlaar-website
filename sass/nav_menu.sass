@@ -25,12 +25,22 @@ $break: 650px
     height: 150px
 
 
-.menu_logo img
+
+#menu_logo_img_mobile
 
   width: 60px
 
   @media all and (min-height: $break)
+    display: none
+
+
+#menu_logo_img_desktop
+
+  display: none
+
+  @media all and (min-height: $break)
     width: 100px
+    display: inline
 
 
 .menu_anim_container

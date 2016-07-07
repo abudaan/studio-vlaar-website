@@ -18,11 +18,18 @@
       width: 200px;
       height: 150px; } }
 
-.menu_logo img {
+#menu_logo_img_mobile {
   width: 60px; }
   @media all and (min-height: 650px) {
-    .menu_logo img {
-      width: 100px; } }
+    #menu_logo_img_mobile {
+      display: none; } }
+
+#menu_logo_img_desktop {
+  display: none; }
+  @media all and (min-height: 650px) {
+    #menu_logo_img_desktop {
+      width: 100px;
+      display: inline; } }
 
 .menu_anim_container {
   background-color: rgba(0, 0, 0, 0.4);
