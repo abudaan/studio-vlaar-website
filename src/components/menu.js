@@ -2,6 +2,11 @@ import React, {PropTypes} from 'react'
 import * as DisplayStates from '../constants/display_states'
 
 
+function createMultiplySign(){
+  return {__html: '&times;'};
+}
+
+
 const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showProjectInfo}) => {
 
   let menu = document.getElementsByClassName('menu_collapsed')[0]
@@ -57,7 +62,7 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
       <div className={'separator2'}>{'-'}</div>
       <div className={projectClass} id={'project'} onClick={menuClicked}>{'project'}</div>
       <div className={'separator2'}>{''}</div>
-      <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
+      <div className={'menu_link close'} onClick={hideMenu} dangerouslySetInnerHTML={createMultiplySign()} />
     </div>
   )
 
