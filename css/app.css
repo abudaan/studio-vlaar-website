@@ -63,7 +63,8 @@ html, body {
   font-family: "libre_baskervilleregular";
   width: 100%;
   height: 100%;
-  color: #fff; }
+  color: #fff;
+  margin: 0; }
 
 #app {
   width: 100%;
@@ -103,32 +104,34 @@ html, body {
       left: 50px; } }
 
 .menu_logo {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   text-align: center;
-  padding: 20px 0px;
-  width: 150px;
-  height: 80px; }
+  width: 150px; }
   @media all and (min-height: 650px) {
     .menu_logo {
-      width: 200px;
-      height: 150px; } }
+      width: 200px; } }
 
 #menu_logo_img_mobile {
-  width: 60px; }
+  width: 60px;
+  padding: 10px 0px; }
   @media all and (min-height: 650px) {
     #menu_logo_img_mobile {
       display: none; } }
+  @media all and (max-height: 295px) {
+    #menu_logo_img_mobile {
+      width: 25%; } }
 
 #menu_logo_img_desktop {
   display: none; }
   @media all and (min-height: 650px) {
     #menu_logo_img_desktop {
       width: 100px;
+      padding: 15px 0px;
       display: inline; } }
 
 .menu_anim_container {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
   transition: 1s; }
@@ -141,8 +144,7 @@ html, body {
   color: white;
   line-height: 1.5em;
   font-size: 15px;
-  width: 150px;
-  height: 100vh; }
+  width: 150px; }
   @media all and (min-height: 650px) {
     .menu_collapsed {
       font-size: 15px;
@@ -157,18 +159,22 @@ html, body {
   text-decoration: underline; }
 
 .close {
-  font-family: monospace;
-  margin-top: 10px;
   cursor: pointer; }
 
 #menu_items_container {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 103px);
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
   @media all and (min-height: 650px) {
     #menu_items_container {
       height: 200px; } }
+  @media only screen and (orientation: portrait) {
+    #menu_items_container {
+      height: calc(100vw - 103px); } }
+  @media all and (max-height: 295px) {
+    #menu_items_container {
+      height: calc(100vh - 73px); } }
 
 #contact_page {
   height: 100vh;
@@ -239,7 +245,7 @@ html, body {
   transform: rotate(-90deg); }
   @media all and (min-height: 650px) {
     #project_info {
-      top: calc(180px + 200px + 10px);
+      top: calc(180px + 200px);
       left: calc(-100vh + 50px);
       font-size: 15px;
       height: 200px; } }
@@ -260,7 +266,8 @@ html, body {
   right: 0; }
   @media all and (min-height: 650px) {
     #project_info_container {
-      height: 160px; } }
+      height: 160px;
+      font-size: 120%; } }
 
 .project_info_item {
   width: 100%; }

@@ -5,6 +5,7 @@ const divStyle = {
   MozbackgroundSize: 'cover',
   ObackgroundSize: 'cover',
   backgroundSize: 'cover',
+  backgroundPosition: 'center center',
   height: '100%',
   width: '100%',
   float: 'left',
@@ -34,6 +35,7 @@ export default class ImageSlider extends Component{
     let url
     let style
     let slides = []
+    //console.log(this.props.size)
     this.props.projects.forEach((project, i) => {
       if(this.props.size <= 1024){
         url = `${this.imageFolder}/${project.image.small}`

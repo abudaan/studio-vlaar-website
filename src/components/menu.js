@@ -56,6 +56,7 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
       <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
       <div className={'separator2'}>{'-'}</div>
       <div className={projectClass} id={'project'} onClick={menuClicked}>{'project'}</div>
+      <div className={'separator2'}>{''}</div>
       <div className={'menu_link close'} onClick={hideMenu}>{'x'}</div>
     </div>
   )
@@ -63,8 +64,8 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
   return (
     <div className={'menu'}>
       <div className={'menu_logo'}>
-        <img id={'menu_logo_img_mobile'} src={'./img/logo-mobile.svg'} onClick={logoClicked}></img><br/>
-        <img id={'menu_logo_img_desktop'} src={'./img/logo-desktop.svg'} onClick={logoClicked}></img><br/>
+        <img id={'menu_logo_img_mobile'} src={'./img/logo-mobile.svg'} onClick={logoClicked}></img>
+        <img id={'menu_logo_img_desktop'} src={'./img/logo-desktop.svg'} onClick={logoClicked}></img>
       </div>
       <div className={'menu_anim_container'} style={animStyle1}>
         <div className={'menu_collapsed'} style={animStyle2}>

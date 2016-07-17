@@ -87,7 +87,11 @@ class Store extends ReduceStore {
       left: -state.index * width,
       transition: '0s'
     }
-    size = Math.max(state.width, state.height)
+
+    size = state.width * window.devicePixelRatio
+    if(state.os === 'ios' || state.os === 'android'){
+      size = Math.max(state.width, state.height) * window.devicePixelRatio
+    }
 
     return {...state, size, sliderAnimStyle, width, height, orientation}
   }

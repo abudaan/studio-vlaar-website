@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "id": 100,
+      "image": {
+        "small": "project1_small.jpg",
+        "large": "project1_large.jpg"
+      },
+      "info": "UHD entree"
+    },
+    {
+      "id": 101,
+      "image": {
+        "small": "project2_small.jpg",
+        "large": "project2_large.jpg"
+      },
+      "info": "Uitbouw"
+    },
+    {
+      "id": 102,
+      "image": {
+        "small": "project3_small.jpg",
+        "large": "project3_large.jpg"
+      },
+      "info": "This is project description\\n with a line break"
+    },
+    {
+      "id": 103,
+      "image": {
+        "small": "project4_small.jpg",
+        "large": "project4_large.jpg"
+      },
+      "info": "This is project description\\n with a line break\\n and yet another line break"
+    },
+    {
+      "id": 104,
+      "image": {
+        "small": "project5_small.jpg",
+        "large": "project5_large.jpg"
+      },
+      "info": "This is another project"
+    },
+    {
+      "id": 105,
+      "image": {
+        "small": "project6_small.jpg",
+        "large": "project6_large.jpg"
+      },
+      "info": "This is another project"
+    },
+    {
+      "id": 106,
+      "image": {
+        "small": "project7_small.jpg",
+        "large": "project7_large.jpg"
+      },
+      "info": "This is another project"
+    },
+    {
+      "id": 107,
+      "image": {
+        "small": "project8_small.jpg",
+        "large": "project8_large.jpg"
+      },
+      "info": "This is another project"
+    },
+    {
+      "id": 108,
+      "image": {
+        "small": "project9_small.jpg",
+        "large": "project9_large.jpg"
+      },
+      "info": "This is another project"
+    }
+  ],
+  "imageFolder": "./portfolio",
+  "pinterestUrl": "https://nl.pinterest.com/studioVLAAR/",
+  "instagramUrl": "https://www.instagram.com/explore/tags/studiovlaar/"
+}

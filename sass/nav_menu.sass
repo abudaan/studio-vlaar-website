@@ -1,6 +1,9 @@
 $small_width: 150px
 $break: 650px
 
+$logo_height_desktop: 156 + 15 + 15
+$logo_height_mobile: 101 // image height + padding
+
 .menu
   position: absolute
   z-index: 3
@@ -11,27 +14,31 @@ $break: 650px
 
 
 .menu_logo
-  // background-color: rgba(0, 255, 0, 1)
-  background-color: rgba(0, 0, 0, 0.4)
+  background-color: rgba(0, 0, 0, 0.2)
+  //background-color: rgba(255, 255, 0, 1)
   cursor: pointer
   text-align: center
-  padding: 20px 0px
+  // padding: 20px 0px
 
   width: $small_width
-  height: 80px
+  // height: 80px
 
   @media all and (min-height: $break)
     width: 200px
-    height: 150px
+    // height: 160px
 
 
 
 #menu_logo_img_mobile
 
   width: 60px
+  padding: 10px 0px
 
   @media all and (min-height: $break)
     display: none
+
+  @media all and (max-height: 295px)
+    width: 25%
 
 
 #menu_logo_img_desktop
@@ -40,12 +47,13 @@ $break: 650px
 
   @media all and (min-height: $break)
     width: 100px
+    padding: 15px 0px
     display: inline
 
 
 .menu_anim_container
-  // background-color: rgba(0, 0, 255, 1)
-  background-color: rgba(0, 0, 0, 0.4)
+  background-color: rgba(0, 0, 0, 0.2)
+  //background-color: rgba(255, 0, 0, 1)
   overflow: hidden
   position: relative
   transition: 1s
@@ -61,7 +69,12 @@ $break: 650px
 
   font-size: 15px
   width: $small_width
-  height: 100vh
+
+  // height: calc(100vh - 103px)
+
+  // @media only screen and (orientation:portrait)
+  //   height: calc(100vw - 103px)
+
 
   @media all and (min-height: $break)
     font-size: 15px
@@ -87,18 +100,27 @@ $break: 650px
 
 
 .close
-  font-family: monospace
-  margin-top: 10px
+  // font-family: monospace
+  // margin-top: 10px
   cursor: pointer
 
 
 //@media all and (max-height: 649px)
 #menu_items_container
   // background-color: pink
-  height: calc(100vh - 120px)
+  height: calc(100vh - 103px)
   @media all and (min-height: $break)
     height: 200px
     // background-color: blue
+
+  @media only screen and (orientation:portrait)
+    height: calc(100vw - 103px)
+
+
+  @media all and (max-height: 295px)
+    height: calc(100vh - 73px)
+
+
   display: flex
   flex-direction: column
   justify-content: space-around

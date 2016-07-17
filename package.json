@@ -42,6 +42,6 @@
   "scripts": {
     "watch-sass": "sass --watch sass:css",
     "watch": "watchify src/index.js -t [ babelify ] -o build/app.js --debug --verbose",
-    "build": "browserify src/index.js -t [ babelify ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
+    "build": "NODE_ENV=production browserify src/index.js -t [ babelify ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
   }
 }
