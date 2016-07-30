@@ -52,8 +52,13 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
     projectClass = 'menu_link menu_link_selected'
   }
 
+  let menuStyle = {
+    height: window.innerHeight - 103
+  }
+  console.log('Menu', window.innerHeight)
+
   menuItems = (
-    <div id={'menu_items_container'}>
+    <div style={menuStyle} id={'menu_items_container'}>
       <div className={contactClass} id={'contact'} onClick={menuClicked}>{'contact'}</div>
       <div className={'separator2'} >{'-'}</div>
       <div className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>

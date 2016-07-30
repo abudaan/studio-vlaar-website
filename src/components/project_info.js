@@ -9,10 +9,16 @@ function createInfo({info}){
 const ProjectInfo = ({showProjectInfo, hideProjectInfo, currentProject}) => {
 
   let child = <span key={'no_project_info'}></span>
+  let style = {
+    width: window.innerHeight,
+    //left: -window.innerWidth + 250,
+    backgroundColor: 'red',
+  }
+  //console.log('project_info', window.innerHeight)
 
   if(showProjectInfo === true){
     child = (
-      <div key={'project_info'} id={'project_info'} onClick={hideProjectInfo}>
+      <div style={style} key={'project_info'} id={'project_info'} onClick={hideProjectInfo}>
         <ReactCSSTransitionGroup
           transitionName={'project_info'}
           transitionEnterTimeout={200}

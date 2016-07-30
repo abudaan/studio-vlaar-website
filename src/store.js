@@ -77,8 +77,8 @@ class Store extends ReduceStore {
     }
     if(orientation.indexOf('portrait') !== -1){
       orientation = 'portrait'
-      width = window.innerHeight
-      height = window.innerWidth
+      //width = window.innerHeight
+      //height = window.innerWidth
     }else if(orientation.indexOf('landscape') !== -1){
       orientation = 'landscape'
     }
@@ -89,8 +89,14 @@ class Store extends ReduceStore {
     }
 
     size = state.width * window.devicePixelRatio
-    if(state.os === 'ios' || state.os === 'android'){
-      size = Math.max(state.width, state.height) * window.devicePixelRatio
+
+    // if(state.os === 'ios' || state.os === 'android'){
+    //   size = Math.max(state.width, state.height) * window.devicePixelRatio
+    // }
+
+    console.log(state.os)
+    if(state.os !== 'ios' && state.os !== 'android'){
+      orientation = 'landscape'
     }
 
     return {...state, size, sliderAnimStyle, width, height, orientation}

@@ -2,11 +2,12 @@
   position: absolute;
   z-index: 3;
   top: 0px;
-  left: calc(-100vh + 190px);
   height: 170px;
   font-size: 14px;
-  width: 100vh;
   background-color: rgba(255, 255, 255, 0.7);
+  -webkit-transform-origin: right top 0;
+  -moz-transform-origin: right top 0;
+  -ms-transform-origin: right top 0;
   transform-origin: right top 0;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -15,7 +16,6 @@
   @media all and (min-height: 650px) {
     #project_info {
       top: calc(180px + 200px);
-      left: calc(-100vh + 50px);
       font-size: 15px;
       height: 200px; } }
 

@@ -20,33 +20,30 @@ html, body
   height: 100%
   display: block
 
+#warning
+  left: -10000px
+  line-height: 100vh
+  text-align: center
 
 @media only screen and (orientation:portrait)
+  #warning
+    left: 0px
   #app
-    height: 100vw
-    +rotate(90deg)
+    display: none
 
 
-@media only screen and (orientation:landscape)
-  #app
-    +rotate(0deg)
-
-
-
-  //@media all and (orientation: portrait)
-    // position: absolute
-    // top: 0
-    // left: calc(-100vh)
-    //transform-origin: right top 0
-    //+rotate(-90deg)
-
-
-#message
-  width: 100%
+#warning, #message
   font-size: 15px
+  width: 100%
   z-index: 4
   top: 20px
   text-align: center
   color: #ddd
   position: absolute
+
+
+#debug
+  position: absolute
+  z-index: 100
+  font-size: 10px
 

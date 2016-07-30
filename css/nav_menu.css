@@ -17,10 +17,11 @@
 
 #menu_logo_img_mobile {
   width: 60px;
-  padding: 10px 0px; }
-  @media all and (min-height: 650px) {
+  padding: 10px 0px;
+  display: none; }
+  @media all and (max-height: 650px) {
     #menu_logo_img_mobile {
-      display: none; } }
+      display: inline; } }
   @media all and (max-height: 295px) {
     #menu_logo_img_mobile {
       width: 25%; } }

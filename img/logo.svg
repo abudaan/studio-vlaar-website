@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg3418"
+   viewBox="0 0 111.28965 150.88997"
+   height="42.584503mm"
+   width="31.408413mm">
+  <defs
+     id="defs3420" />
+  <metadata
+     id="metadata3423">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-10.069462,-14.060076)"
+     id="layer1">
+    <text
+       y="29.660076"
+       x="56.87738"
+       id="text54"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none">
+      <tspan
+         id="tspan56"
+         y="29.660076"
+         x="56.87738">S</tspan>
+    </text>
+    <g
+       transform="matrix(1.25,0,0,-1.25,65.77738,160.31211)"
+       id="g58">
+      <path
+         id="path60"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 1.706,3.924 -40.486,90.113 -3.468,0 L 0,0 Z" />
+    </g>
+    <g
+       transform="matrix(1.25,0,0,-1.25,65.77738,160.31211)"
+       id="g62">
+      <path
+         id="path64"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 0,0 1.706,3.924 -40.486,90.113 -3.468,0 L 0,0 Z" />
+    </g>
+    <g
+       transform="matrix(1.25,0,0,-1.25,71.14226,136.46135)"
+       id="g66">
+      <path
+         id="path68"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 1.858,-4.131 35.985,79.087 -3.703,0 L 0,0 Z" />
+    </g>
+    <g
+       transform="matrix(1.25,0,0,-1.25,71.14226,136.46135)"
+       id="g70">
+      <path
+         id="path72"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 0,0 1.858,-4.131 35.985,79.087 -3.703,0 L 0,0 Z" />
+    </g>
+  </g>
+</svg>

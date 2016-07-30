@@ -34,8 +34,10 @@ $logo_height_mobile: 101 // image height + padding
   width: 60px
   padding: 10px 0px
 
-  @media all and (min-height: $break)
-    display: none
+  display: none
+
+  @media all and (max-height: $break)
+    display: inline
 
   @media all and (max-height: 295px)
     width: 25%
