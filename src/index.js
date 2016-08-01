@@ -6,7 +6,7 @@ import Swipe from './swipe'
 
 const forceScroll = function(){
   setTimeout(() => {
-    window.scrollTo(0, 1)
+    window.scrollTo(0, -1)
   }, 500)
 }
 
