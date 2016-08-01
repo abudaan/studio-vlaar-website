@@ -27,13 +27,6 @@ export default {
     })
   },
 
-  setOrientation(){
-    AppDispatcher.dispatch({
-      type: ActionTypes.SET_ORIENTATION,
-    })
-  },
-
-
   sliderClicked(event){
     AppDispatcher.dispatch({
       type: ActionTypes.SLIDER_CLICKED,

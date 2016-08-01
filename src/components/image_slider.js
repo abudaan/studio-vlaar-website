@@ -15,8 +15,6 @@ const sliderStyle = {
   height: '100%',
   width: '100%',
   position: 'absolute',
-  transition: '1s',
-  left: '0px',
 }
 
 
@@ -32,9 +30,15 @@ export default class ImageSlider extends Component{
 
 
   render(){
+
     let url
     let style
     let slides = []
+    let sliderAnimStyle = {
+      left: -this.props.index * this.props.width,
+      transition: '0.7s'
+    }
+
     //console.log(this.props.size)
     this.props.projects.forEach((project, i) => {
       if(this.props.size <= 1024){
@@ -46,7 +50,7 @@ export default class ImageSlider extends Component{
       slides.push(<div key={i} style={style}></div>)
     })
 
-    style = {...sliderStyle, ...this.props.sliderAnimStyle, width: `${this.props.width * this.numProjects}px`}
+    style = {...sliderStyle, ...sliderAnimStyle, width: `${this.props.width * this.numProjects}px`}
 
     if(this.props.touchEnabled === true){
       return <div style={style}> {slides} </div>
@@ -57,11 +61,11 @@ export default class ImageSlider extends Component{
 }
 
 ImageSlider.propTypes = {
-  sliderAnimStyle: PropTypes.object.isRequired,
   imageFolder: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+  size: PropTypes.number.isRequired,
   sliderClicked: PropTypes.func.isRequired,
-  width: PropTypes.number.isRequired,
   touchEnabled: PropTypes.bool,
+  width: PropTypes.number.isRequired,
 }

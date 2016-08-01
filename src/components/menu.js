@@ -55,7 +55,7 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
   let menuStyle = {
     height: window.innerHeight - 103
   }
-  console.log('Menu', window.innerHeight)
+  //console.log('Menu', window.innerHeight)
 
   menuItems = (
     <div style={menuStyle} id={'menu_items_container'}>

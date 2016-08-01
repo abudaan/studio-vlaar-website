@@ -30,7 +30,6 @@ class App extends Component{
     super()
     this.index = Store.getState().index
     this._windowResizeListener = this._handleResize.bind(this)
-    this._deviceOrientationListener = this._handleOrientation.bind(this)
     this._windowKeyPressListener = this._handleKeyPress.bind(this)
     this._swipeListener = this._handleSwipe.bind(this)
     fetchJSON('./data.json')
@@ -41,22 +40,18 @@ class App extends Component{
     document.addEventListener('keydown', this._windowKeyPressListener)
     document.addEventListener('swipe', this._swipeListener)
     window.addEventListener('resize', this._windowResizeListener)
-    window.addEventListener('orientationchange', this._deviceOrientationListener)
+    window.addEventListener('orientationchange', this._windowResizeListener)
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this._windowKeyPressListener)
     document.removeEventListener('swipe', this._swipeListener)
     window.removeEventListener('resize', this._windowResizeListener)
-    window.removeEventListener('orientationchange', this._deviceOrientationListener)
+    window.removeEventListener('orientationchange', this._windowResizeListener)
   }
 
   _handleResize(){
     Actions.setSize()
-  }
-
-  _handleOrientation(){
-    Actions.setOrientation()
   }
 
   _handleKeyPress(e){
@@ -70,7 +65,12 @@ class App extends Component{
   render(){
     let component = null
 
+    console.log(this.state)
+
     switch(this.state.displayState){
+
+      case DisplayStates.WARNING:
+        return <div key={'warning'} id="message">{this.state.message}</div>
 
       case DisplayStates.MESSAGE:
         component = <div key={'loading'} id="message">{this.state.message}</div>

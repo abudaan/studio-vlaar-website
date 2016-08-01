@@ -1,7 +1,6 @@
 export const DATA_LOADED = 'dataLoaded'
 export const MESSAGE = 'message'
 export const SET_SIZE = 'setSize'
-export const SET_ORIENTATION = 'setOrientation'
 export const SLIDER_CLICKED = 'sliderClicked'
 export const SLIDER_SWIPED = 'sliderSwiped'
 export const SLIDER_KEYPRESS = 'sliderKeyPress'

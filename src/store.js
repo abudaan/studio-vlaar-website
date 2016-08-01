@@ -10,8 +10,8 @@ class Store extends ReduceStore {
   getInitialState(){
     return {
       ...getBrowser(),
-      projects: [],
-      imageFolder: '',
+//      projects: [],
+//      imageFolder: '',
       displayState: DisplayStates.MESSAGE,
       message: 'loading...',
       width: window.innerWidth,
@@ -58,12 +58,13 @@ class Store extends ReduceStore {
   }
 
 
-  calculateStateBySizeAndOrientation(state){
+  calculateSizeAndOrientation(){
     let orientation = screen.orientation || screen.oOrientation || screen.mozOrientation || screen.msOrientation || screen.webkitOrientation
     let width = window.innerWidth
     let height = window.innerHeight
     let size
-    let sliderAnimStyle
+    let displayState = DisplayStates.MAIN
+    let message = ''
 
     if(typeof orientation === 'undefined'){
       if(width > height){
@@ -77,29 +78,18 @@ class Store extends ReduceStore {
     }
     if(orientation.indexOf('portrait') !== -1){
       orientation = 'portrait'
-      //width = window.innerHeight
-      //height = window.innerWidth
     }else if(orientation.indexOf('landscape') !== -1){
       orientation = 'landscape'
     }
 
-    sliderAnimStyle = {
-      left: -state.index * width,
-      transition: '0s'
+    size = width * window.devicePixelRatio
+
+    if(orientation !== 'landscape'){
+      displayState = DisplayStates.WARNING
+      message = 'This site is best viewed in landscape mode.'
     }
 
-    size = state.width * window.devicePixelRatio
-
-    // if(state.os === 'ios' || state.os === 'android'){
-    //   size = Math.max(state.width, state.height) * window.devicePixelRatio
-    // }
-
-    console.log(state.os)
-    if(state.os !== 'ios' && state.os !== 'android'){
-      orientation = 'landscape'
-    }
-
-    return {...state, size, sliderAnimStyle, width, height, orientation}
+    return {size, width, height, displayState, message}
   }
 
   reduce(state, action) {
@@ -115,13 +105,13 @@ class Store extends ReduceStore {
 
       case ActionTypes.DATA_LOADED:
         currentProject = action.payload.data.projects[0]
-        let {width, height, size, orientation} = this.calculateStateBySizeAndOrientation(state)
-        return {...state, ...action.payload.data, displayState: DisplayStates.MAIN, currentProject, size, width, height, orientation}
+        //console.log(currentProject)
+        return {...state, ...action.payload.data, currentProject, ...this.calculateSizeAndOrientation(state)}
 
 
       case ActionTypes.SET_SIZE:
       case ActionTypes.SET_ORIENTATION:
-        return this.calculateStateBySizeAndOrientation(state)
+        return {...state, ...this.calculateSizeAndOrientation()}
 
 
       case ActionTypes.SLIDER_CLICKED:
