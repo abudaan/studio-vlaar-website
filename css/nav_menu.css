@@ -36,6 +36,7 @@
 
 .menu_anim_container {
   background-color: rgba(0, 0, 0, 0.2);
+  background-color: red;
   overflow: hidden;
   position: relative;
   transition: 1s; }
@@ -66,18 +67,8 @@
   cursor: pointer; }
 
 #menu_items_container {
-  height: calc(100vh - 103px);
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
-  @media all and (min-height: 650px) {
-    #menu_items_container {
-      height: 200px; } }
-  @media only screen and (orientation: portrait) {
-    #menu_items_container {
-      height: calc(100vw - 103px); } }
-  @media all and (max-height: 295px) {
-    #menu_items_container {
-      height: calc(100vh - 73px); } }
 
 /*# sourceMappingURL=nav_menu.css.map */

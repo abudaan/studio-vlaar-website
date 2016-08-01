@@ -5,6 +5,8 @@ import * as DisplayStates from './constants/display_states'
 import {getBrowser} from './browser_check'
 
 
+const MAX_HEIGHT = 650
+
 class Store extends ReduceStore {
 
   getInitialState(){
@@ -24,6 +26,22 @@ class Store extends ReduceStore {
       },
       showMenu: false,
       showProjectInfo: false,
+      dimensions: {
+        desktop: {
+          menu: {
+            logo: {
+              width: 100
+            }
+          }
+        },
+        mobile: {
+          menu: {
+            logo: {
+              width: 60
+            }
+          }
+        }
+      }
     }
   }
 
@@ -89,7 +107,9 @@ class Store extends ReduceStore {
       message = 'This site is best viewed in landscape mode.'
     }
 
-    return {size, width, height, displayState, message}
+    let type = height > MAX_HEIGHT ? 'desktop' : 'mobile'
+
+    return {size, width, height, type, displayState, message}
   }
 
   reduce(state, action) {

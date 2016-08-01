@@ -7,21 +7,26 @@ function createMultiplySign(){
 }
 
 
-const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showProjectInfo}) => {
+const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displayState, showProjectInfo}) => {
 
-  let menu = document.getElementsByClassName('menu_collapsed')[0]
+  let menuHeight = 200
+  //console.log(type)
+  if(type === 'mobile'){
+    let logo = document.getElementById('menu_logo_img_mobile')
+    let style = getComputedStyle(logo)
+    let h = style.height.replace('px', '')
+    let p = style.paddingTop.replace('px', '')
+    menuHeight = height - h - p - p
+  }
+
   let animStyle1 = {}
   let animStyle2 = {}
   let duration = '0.5s'
-  let height = 170
 
-  if(typeof menu !== 'undefined'){
-    height = getComputedStyle(menu).height.replace('px', '')
-  }
 
   if(showMenu === true){
     animStyle1 = {
-      height: height + 'px',
+      height: menuHeight + 'px',
       transition: duration
     }
     animStyle2 = {
@@ -34,7 +39,7 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
       transition: duration
     }
     animStyle2 = {
-      top: -height + 'px',
+      top: -menuHeight + 'px',
       transition: duration
     }
   }
@@ -53,9 +58,8 @@ const Menu = ({showMenu, logoClicked, menuClicked, hideMenu, displayState, showP
   }
 
   let menuStyle = {
-    height: window.innerHeight - 103
+    height: menuHeight
   }
-  //console.log('Menu', window.innerHeight)
 
   menuItems = (
     <div style={menuStyle} id={'menu_items_container'}>

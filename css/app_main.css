@@ -13,7 +13,7 @@ html, body {
   height: 100%;
   display: block; }
 
-#message {
+.message {
   position: absolute;
   width: 100%;
   top: 20px;
