@@ -22,9 +22,10 @@ html, body {
   color: #ddd; }
 
 #debug {
-  bottom: 0;
+  right: 0;
   position: absolute;
   z-index: 100;
-  font-size: 15px; }
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.3); }
 
 /*# sourceMappingURL=app_main.css.map */

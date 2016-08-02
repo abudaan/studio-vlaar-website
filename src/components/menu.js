@@ -6,17 +6,18 @@ function createMultiplySign(){
   return {__html: '&times;'};
 }
 
-
 const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displayState, showProjectInfo}) => {
 
   let menuHeight = 200
-  //console.log(type)
+
   if(type === 'mobile'){
     let logo = document.getElementById('menu_logo_img_mobile')
-    let style = getComputedStyle(logo)
-    let h = style.height.replace('px', '')
-    let p = style.paddingTop.replace('px', '')
-    menuHeight = height - h - p - p
+    if(logo){
+      let style = getComputedStyle(logo)
+      let h = style.height.replace('px', '')
+      let p = style.paddingTop.replace('px', '')
+      menuHeight = height - h - p - p
+    }
   }
 
   let animStyle1 = {}
@@ -60,18 +61,30 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
   let menuStyle = {
     height: menuHeight
   }
+  let menuItemStyle = {}
+
+
+  if(type === 'mobile'){
+    menuItemStyle = {
+      height: (menuHeight - 5) / 8
+    }
+    menuStyle = {
+      height: menuHeight,
+      paddingTop: 5,
+    }
+  }
 
   menuItems = (
     <div style={menuStyle} id={'menu_items_container'}>
-      <div className={contactClass} id={'contact'} onClick={menuClicked}>{'contact'}</div>
-      <div className={'separator2'} >{'-'}</div>
-      <div className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>
-      <div className={'separator2'}>{'-'}</div>
-      <div className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
-      <div className={'separator2'}>{'-'}</div>
-      <div className={projectClass} id={'project'} onClick={menuClicked}>{'project'}</div>
+      <div style={menuItemStyle} className={contactClass} id={'contact'} onClick={menuClicked}>{'contact'}</div>
+      <div style={menuItemStyle} className={'separator2'} >{'-'}</div>
+      <div style={menuItemStyle} className={'menu_link'} id={'pinterest'} onClick={menuClicked}>{'pinterest'}</div>
+      <div style={menuItemStyle} className={'separator2'}>{'-'}</div>
+      <div style={menuItemStyle} className={'menu_link'} id={'instagram'} onClick={menuClicked}>{'instagram'}</div>
+      <div style={menuItemStyle} className={'separator2'}>{'-'}</div>
+      <div style={menuItemStyle} className={projectClass} id={'project'} onClick={menuClicked}>{'project'}</div>
       <div className={'separator2'}>{''}</div>
-      <div className={'menu_link close'} onClick={hideMenu} dangerouslySetInnerHTML={createMultiplySign()} />
+      <div style={menuItemStyle} className={'menu_link close'} onClick={hideMenu} dangerouslySetInnerHTML={createMultiplySign()} />
     </div>
   )
 
@@ -93,11 +106,13 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
 
 Menu.propTypes = {
   displayState: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
   hideMenu: PropTypes.func.isRequired,
   logoClicked: PropTypes.func.isRequired,
   menuClicked: PropTypes.func.isRequired,
   showMenu: PropTypes.bool.isRequired,
   showProjectInfo: PropTypes.bool.isRequired,
+  type: PropTypes.string.isRequired,
 }
 
 export default Menu

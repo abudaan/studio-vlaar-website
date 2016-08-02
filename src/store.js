@@ -9,16 +9,22 @@ const MAX_HEIGHT = 650
 
 class Store extends ReduceStore {
 
+
   getInitialState(){
+
+    let type = window.innerHeight > MAX_HEIGHT ? 'desktop' : 'mobile'
+
     return {
       ...getBrowser(),
-//      projects: [],
-//      imageFolder: '',
+      projects: [],
+      imageFolder: '',
+      currentProject: {},
       displayState: DisplayStates.MESSAGE,
       message: 'loading...',
       width: window.innerWidth,
       height: window.innerHeight,
       size: window.innerWidth,
+      type,
       orientation: 'landscape',
       index: 0,
       sliderAnimStyle: {

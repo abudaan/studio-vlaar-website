@@ -11,8 +11,6 @@ import {fetchJSON} from '../fetch_helpers'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
-// only component with state
-
 class App extends Component{
 
   static displayName = 'App'
@@ -73,6 +71,7 @@ class App extends Component{
         return <div key={'warning'} className="message">{this.state.message}</div>
 
       case DisplayStates.MESSAGE:
+        // return <div key={'loading'} className="message">{this.state.message}</div>
         component = <div key={'loading'} className="message">{this.state.message}</div>
         break
 
@@ -107,6 +106,7 @@ class App extends Component{
         >
           {component}
           <ProjectInfo
+            {...this.state}
             showProjectInfo={this.state.showProjectInfo}
             hideProjectInfo={Actions.hideProjectInfo}
             currentProject={this.state.currentProject}

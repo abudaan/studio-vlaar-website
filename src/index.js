@@ -6,7 +6,7 @@ import Swipe from './swipe'
 
 const forceScroll = function(){
   setTimeout(() => {
-    window.scrollTo(0, -1)
+    window.scrollTo(0, 1)
   }, 500)
 }
 
@@ -14,14 +14,11 @@ window.addEventListener('orientationchange', () => {
   forceScroll()
 })
 
-
-document.addEventListener('touchmove', e => {
-  e.preventDefault() // this also prevents zooming!
-})
-
 document.addEventListener('DOMContentLoaded', () => {
   forceScroll()
   Swipe.init()
+
+  document.getElementById('debug').innerHTML = window.innerWidth + 'x' + window.innerHeight
 
   ReactDOM.render(
     <App />,

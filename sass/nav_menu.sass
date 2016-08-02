@@ -1,9 +1,6 @@
 $small_width: 150px
 $break: 650px
 
-$logo_height_desktop: 156 + 15 + 15
-$logo_height_mobile: 101 // image height + padding
-
 .menu
   position: absolute
   z-index: 3
@@ -15,40 +12,40 @@ $logo_height_mobile: 101 // image height + padding
 
 .menu_logo
   background-color: rgba(0, 0, 0, 0.2)
-  //background-color: rgba(255, 255, 0, 1)
+  background-color: rgba(255, 255, 0, 1)
   cursor: pointer
   text-align: center
 
-  width: $small_width
-  // height: 80px
+  width: 150px
 
   @media all and (min-height: $break)
+    background-color: rgba(0, 255, 0, 1)
     width: 200px
-    // height: 160px
 
 
 
 #menu_logo_img_mobile
 
   width: 60px
-  padding: 10px 0px
+  padding: 10px 0
 
   display: none
 
   @media all and (max-height: $break)
     display: inline
 
-  @media all and (max-height: 295px)
+  @media all and (max-height: 320px)
     width: 25%
 
 
 #menu_logo_img_desktop
 
+  padding: 10px 0
+  width: 100px
+
   display: none
 
   @media all and (min-height: $break)
-    width: 100px
-    padding: 15px 0px
     display: inline
 
 
@@ -66,7 +63,7 @@ $logo_height_mobile: 101 // image height + padding
   transition: 1s
   text-align: center
   color: white
-  line-height: 1.5em
+  line-height: 1.3em
 
   font-size: 15px
   width: $small_width
@@ -76,9 +73,9 @@ $logo_height_mobile: 101 // image height + padding
     width: 200px
     height: 200px
 
+
 .menu_link
   cursor: pointer
-
 
 .menu_link_selected
   font-weight: normal
@@ -88,7 +85,11 @@ $logo_height_mobile: 101 // image height + padding
   cursor: pointer
 
 #menu_items_container
-  display: flex
-  flex-direction: column
-  justify-content: space-around
+  @media all and (min-height: $break)
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    -webkit-display: flex
+    -webkit-flex-direction: column
+    -webkit-justify-content: space-around
 

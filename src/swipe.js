@@ -6,6 +6,17 @@ let lastEvent = null
 const mAbs = Math.abs
 const minDistance = 100
 
+
+const createEvent = function(type, detail){
+  if(typeof window.CustomEvent === 'undefined'){
+    let event = document.createEvent('CustomEvent')
+    event.initCustomEvent(type, true, true, detail)
+    document.dispatchEvent(event)
+  }else{
+    document.dispatchEvent(new CustomEvent(type, {detail}))
+  }
+}
+
 const Swipe = {
 
   init(){
@@ -15,15 +26,19 @@ const Swipe = {
   },
 
   handleTouchStart(evt){
+    //evt.preventDefault()
     xDown = evt.touches[0].clientX
     yDown = evt.touches[0].clientY
   },
 
   handleTouchMove(evt){
+    evt.defaultPrevented
+    evt.preventDefault() // this also prevents zooming!
     lastEvent = evt
   },
 
-  handleTouchEnd(){
+  handleTouchEnd(evt){
+    //evt.preventDefault()
 
     if(lastEvent === null){
       return
@@ -37,15 +52,15 @@ const Swipe = {
 
     if(mAbs(xDiff) > mAbs(yDiff)){
       if(xDiff > minDistance){
-        document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'left'}}))
+        createEvent('swipe', {direction: 'left'})
       }else if(xDiff < -minDistance){
-        document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'right'}}))
+        createEvent('swipe', {direction: 'right'})
       }
     }else if(mAbs(xDiff) <= mAbs(yDiff)){
       if(yDiff > minDistance){
-        document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'up'}}))
+        createEvent('swipe', {direction: 'up'})
       }else if(yDiff < -minDistance){
-        document.dispatchEvent(new CustomEvent('swipe', {detail: {direction: 'down'}}))
+        createEvent('swipe', {direction: 'down'})
       }
     }
 

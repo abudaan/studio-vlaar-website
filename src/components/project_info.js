@@ -6,15 +6,20 @@ function createInfo({info}){
   return {__html: info.replace(/\\n/g, '<br/>')};
 }
 
-const ProjectInfo = ({showProjectInfo, hideProjectInfo, currentProject}) => {
+const ProjectInfo = ({type, width, height, showProjectInfo, hideProjectInfo, currentProject}) => {
 
   let child = <span key={'no_project_info'}></span>
-  let style = {
-    width: window.innerHeight,
-    //left: -window.innerWidth + 250,
-    backgroundColor: 'red',
+  let left = -(height - 50) // padding between left side and menu
+  let top = 370 // height of collapsed menu
+  if(type === 'mobile'){
+    left = -(height - 190) // width of menu
+    top = 0
   }
-  //console.log('project_info', window.innerHeight)
+  let style = {
+    width: height,
+    left,
+    top,
+  }
 
   if(showProjectInfo === true){
     child = (
@@ -48,9 +53,12 @@ const ProjectInfo = ({showProjectInfo, hideProjectInfo, currentProject}) => {
 
 
 ProjectInfo.propTypes = {
-  showProjectInfo: PropTypes.bool,
-  hideProjectInfo: PropTypes.func,
-  currentProject: PropTypes.object
+  currentProject: PropTypes.object.isRequired,
+  height: PropTypes.number.isRequired,
+  hideProjectInfo: PropTypes.func.isRequired,
+  showProjectInfo: PropTypes.bool.isRequired,
+  type: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
 }
 
 export default ProjectInfo
