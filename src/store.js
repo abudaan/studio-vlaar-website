@@ -16,7 +16,7 @@ class Store extends ReduceStore {
 
     return {
       ...getBrowser(),
-      projects: [],
+      //projects: [], // weird that this has to be commented out
       imageFolder: '',
       currentProject: {},
       displayState: DisplayStates.MESSAGE,
@@ -132,6 +132,7 @@ class Store extends ReduceStore {
       case ActionTypes.DATA_LOADED:
         currentProject = action.payload.data.projects[0]
         //console.log(currentProject)
+        //let projects = action.payload.data.projects
         return {...state, ...action.payload.data, currentProject, ...this.calculateSizeAndOrientation(state)}
 
 
