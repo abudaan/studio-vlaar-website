@@ -1,11 +1,7 @@
-// width of menu plus gutter twice
-$w1: 300px //200 + 50 + 50
-$w2: 190px //150 + 20 + 20
 // height of ipad viewport minus address bar and such
 $break: 650px
 
 #contact_page
-  height: 100vh
   width: 100%
   position: absolute // for react transitions
 
@@ -15,10 +11,6 @@ $break: 650px
   float: left
   height: inherit
 
-  width: calc((100% - 190px) * 0.45)
-  @media all and (min-height: $break)
-    width: calc((100% - 300px) * 0.45)
-
 
 #photo_pascal img
   width: 100%
@@ -27,24 +19,25 @@ $break: 650px
 
 #contact_content
   display: inline-flex
+  display: -webkit-inline-flex
   align-items: center
+  -webkit-align-items: center
   float: left
   height: inherit
-  line-height: 1.7em
+  line-height: 1.0em
   background-color: rgba(255, 255, 255, 0.8)
 
-  width: calc((100% - 190px) * 0.55)
   margin-left: 190px
   font-size: 15px
   color: #333
 
   @media all and (min-height: $break)
     margin-left: 300px
-    width: calc((100% - 300px) * 0.55)
+    line-height: 1.7em
     font-size: 20px
 
+
 #contact_content_container
-  align-self: center
   width: 100%
 
 .contact_item,
@@ -57,6 +50,8 @@ $break: 650px
     color: #333
   a:hover
     text-decoration: none
+
+
 
 /*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only*/
 //.e-mail:before

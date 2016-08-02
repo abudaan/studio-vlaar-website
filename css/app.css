@@ -97,13 +97,11 @@ html, body {
 
 .menu_logo {
   background-color: rgba(0, 0, 0, 0.2);
-  background-color: yellow;
   cursor: pointer;
   text-align: center;
   width: 150px; }
   @media all and (min-height: 650px) {
     .menu_logo {
-      background-color: lime;
       width: 200px; } }
 
 #menu_logo_img_mobile {
@@ -127,7 +125,6 @@ html, body {
 
 .menu_anim_container {
   background-color: rgba(0, 0, 0, 0.2);
-  background-color: red;
   overflow: hidden;
   position: relative;
   transition: 1s; }
@@ -166,12 +163,60 @@ html, body {
     -webkit-flex-direction: column;
     -webkit-justify-content: space-around; } }
 
+#contact_page {
+  width: 100%;
+  position: absolute; }
+
+#photo_pascal {
+  display: inline-block;
+  float: left;
+  height: inherit; }
+
+#photo_pascal img {
+  width: 100%;
+  height: auto; }
+
+#contact_content {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  float: left;
+  height: inherit;
+  line-height: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-left: 190px;
+  font-size: 15px;
+  color: #333; }
+  @media all and (min-height: 650px) {
+    #contact_content {
+      margin-left: 300px;
+      line-height: 1.7em;
+      font-size: 20px; } }
+
+#contact_content_container {
+  width: 100%; }
+
+.contact_item,
+.separator {
+  text-align: center;
+  padding: 7px 0;
+  width: 100%; }
+  .contact_item a,
+  .separator a {
+    text-decoration: none;
+    color: #333; }
+  .contact_item a:hover,
+  .separator a:hover {
+    text-decoration: none; }
+
+/*http://stackoverflow.com/questions/21421948/protect-e-mail-address-with-css-only */
 #project_info {
   position: absolute;
   z-index: 3;
   height: 170px;
-  font-size: 14px;
-  background-color: rgba(255, 0, 255, 0.7);
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-transform-origin: right top;
   -moz-transform-origin: right top;
   -ms-transform-origin: right top;
@@ -182,8 +227,12 @@ html, body {
   transform: rotate(-90deg); }
   @media all and (min-height: 650px) {
     #project_info {
-      font-size: 15px;
+      font-size: 13px;
       height: 200px; } }
+  @media all and (max-height: 320px) {
+    #project_info {
+      font-size: 10px;
+      height: 120px; } }
 
 #project_info_container {
   display: flex;
@@ -207,6 +256,9 @@ html, body {
     #project_info_container {
       height: 160px;
       font-size: 120%; } }
+  @media all and (max-height: 320px) {
+    #project_info_container {
+      padding: 10px 20px; } }
 
 .project_info_item {
   width: 100%; }

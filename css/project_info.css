@@ -2,8 +2,8 @@
   position: absolute;
   z-index: 3;
   height: 170px;
-  font-size: 14px;
-  background-color: rgba(255, 0, 255, 0.7);
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-transform-origin: right top;
   -moz-transform-origin: right top;
   -ms-transform-origin: right top;
@@ -14,8 +14,12 @@
   transform: rotate(-90deg); }
   @media all and (min-height: 650px) {
     #project_info {
-      font-size: 15px;
+      font-size: 13px;
       height: 200px; } }
+  @media all and (max-height: 320px) {
+    #project_info {
+      font-size: 10px;
+      height: 120px; } }
 
 #project_info_container {
   display: flex;
@@ -39,6 +43,9 @@
     #project_info_container {
       height: 160px;
       font-size: 120%; } }
+  @media all and (max-height: 320px) {
+    #project_info_container {
+      padding: 10px 20px; } }
 
 .project_info_item {
   width: 100%; }
