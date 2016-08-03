@@ -1,11 +1,11 @@
+@import "./_constants"
 $small_width: 150px
-$break: 650px
 
 .menu
   position: absolute
   z-index: 3
   left: 20px
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     left: 50px
 
 
@@ -18,7 +18,7 @@ $break: 650px
 
   width: 150px
 
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     // background-color: rgba(0, 255, 0, 1)
     width: 200px
 
@@ -29,12 +29,12 @@ $break: 650px
   width: 60px
   padding: 10px 0
 
-  display: none
+  display: inline
 
-  @media all and (max-height: $break)
-    display: inline
+  @media all and (min-height: $min_height_desktop)
+    display: none
 
-  @media all and (max-height: 320px)
+  @media all and (max-height: $max_height_extra_small)
     width: 25%
 
 
@@ -45,7 +45,7 @@ $break: 650px
 
   display: none
 
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     display: inline
 
 
@@ -68,7 +68,7 @@ $break: 650px
   font-size: 15px
   width: $small_width
 
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     font-size: 15px
     width: 200px
     height: 200px
@@ -76,6 +76,7 @@ $break: 650px
 
 .menu_link
   cursor: pointer
+  //background-color: rgba(0, 255, 0, 0.3)
 
 .menu_link_selected
   font-weight: normal
@@ -85,7 +86,7 @@ $break: 650px
   cursor: pointer
 
 #menu_items_container
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     display: flex
     flex-direction: column
     justify-content: space-around

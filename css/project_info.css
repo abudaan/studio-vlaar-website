@@ -12,7 +12,7 @@
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
-  @media all and (min-height: 650px) {
+  @media all and (min-height: 720px) {
     #project_info {
       font-size: 13px;
       height: 200px; } }
@@ -39,7 +39,7 @@
   position: absolute;
   top: 0;
   right: 0; }
-  @media all and (min-height: 650px) {
+  @media all and (min-height: 720px) {
     #project_info_container {
       height: 160px;
       font-size: 120%; } }

@@ -1,5 +1,4 @@
-// height of ipad viewport minus address bar and such
-$break: 650px
+@import "./_constants"
 
 #contact_page
   width: 100%
@@ -31,7 +30,7 @@ $break: 650px
   font-size: 15px
   color: #333
 
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     margin-left: 300px
     line-height: 1.7em
     font-size: 20px

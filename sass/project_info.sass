@@ -1,4 +1,4 @@
-$break: 650px
+@import "./_constants"
 
 =rotate($deg)
   -webkit-transform: rotate($deg)
@@ -14,11 +14,11 @@ $break: 650px
   height: 170px
   font-size: 15px
 
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     font-size: 13px
     height: 200px
 
-  @media all and (max-height: 320px)
+  @media all and (max-height: $max_height_extra_small)
     font-size: 10px
     height: 120px
 
@@ -48,11 +48,11 @@ $break: 650px
   width: calc(100% - 40px)
 
   height: 130px
-  @media all and (min-height: $break)
+  @media all and (min-height: $min_height_desktop)
     height: 160px
     font-size: 120%
 
-  @media all and (max-height: 320px)
+  @media all and (max-height: $max_height_extra_small)
     padding: 10px 20px
 
 

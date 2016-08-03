@@ -66,12 +66,17 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
 
   if(type === 'mobile'){
     menuItemStyle = {
-      height: (menuHeight - 5) / 8
+      height: (menuHeight - 5) / 8,
+      lineHeight: `${(menuHeight - 5) / 8}px`,
     }
     menuStyle = {
       height: menuHeight,
       paddingTop: 5,
     }
+  }
+
+  let _logoClicked = () => {
+    logoClicked(showMenu)
   }
 
   menuItems = (
@@ -91,8 +96,8 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
   return (
     <div className={'menu'}>
       <div className={'menu_logo'}>
-        <img id={'menu_logo_img_mobile'} src={'./img/logo-mobile.svg'} onClick={logoClicked}></img>
-        <img id={'menu_logo_img_desktop'} src={'./img/logo-desktop.svg'} onClick={logoClicked}></img>
+        <img id={'menu_logo_img_mobile'} src={'./img/logo-mobile.svg'} onClick={_logoClicked}></img>
+        <img id={'menu_logo_img_desktop'} src={'./img/logo-desktop.svg'} onClick={_logoClicked}></img>
       </div>
       <div className={'menu_anim_container'} style={animStyle1}>
         <div className={'menu_collapsed'} style={animStyle2}>

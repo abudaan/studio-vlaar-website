@@ -5,123 +5,108 @@ import * as DisplayStates from './constants/display_states'
 import {getBrowser} from './browser_check'
 
 
-const MAX_HEIGHT = 650
+const MAX_HEIGHT_DESKTOP = 720
+
+function calculateSizeAndOrientation(){
+
+  let orientation = screen.orientation || screen.oOrientation || screen.mozOrientation || screen.msOrientation || screen.webkitOrientation
+  let width = window.innerWidth
+  let height = window.innerHeight
+  let size, type
+  let displayState = DisplayStates.MAIN
+  let message = ''
+
+  if(typeof orientation === 'undefined'){
+    if(width > height){
+      orientation = 'landscape'
+    }else{
+      orientation = 'portrait'
+    }
+  }
+  if(typeof orientation.type !== 'undefined'){
+    orientation = orientation.type
+  }
+  if(orientation.indexOf('portrait') !== -1){
+    orientation = 'portrait'
+  }else if(orientation.indexOf('landscape') !== -1){
+    orientation = 'landscape'
+  }
+
+  size = width * window.devicePixelRatio
+
+  type = height >= MAX_HEIGHT_DESKTOP ? 'desktop' : 'mobile'
+
+  return {size, width, height, type, orientation, displayState, message}
+}
+
+
+function calculateStateByIndex(operation, state){
+  let index = state.index
+  let maxIndex = state.projects.length
+
+  if(operation === '+'){
+    index++
+  }else if(operation === '-'){
+    index--
+  }
+
+  if(index < 0){
+    index = 0
+    // index = maxIndex - 1
+  }else if(index >= maxIndex){
+    index = maxIndex - 1
+    // index = 0
+  }
+
+  if(index !== state.index){
+    let sliderAnimStyle = {
+      left: -index * state.width,
+      transition: '1s'
+    }
+    return {...state, index, sliderAnimStyle, currentProject: state.projects[index]}
+  }
+
+  return state
+}
+
 
 class Store extends ReduceStore {
 
-
   getInitialState(){
 
-    let type = window.innerHeight > MAX_HEIGHT ? 'desktop' : 'mobile'
+    let displayState = DisplayStates.MESSAGE
+    let message = 'loading...'
+    let state = calculateSizeAndOrientation()
 
-    return {
+    if(state.orientation !== 'landscape'){
+      displayState = DisplayStates.WARNING
+      message = 'This site is best viewed in landscape mode.'
+    }
+
+    state = {
+      ...state,
       ...getBrowser(),
-      //projects: [], // weird that this has to be commented out
+      displayState,
+      message,
+      projects: [],
       imageFolder: '',
       currentProject: {},
-      displayState: DisplayStates.MESSAGE,
-      message: 'loading...',
-      width: window.innerWidth,
-      height: window.innerHeight,
-      size: window.innerWidth,
-      type,
-      orientation: 'landscape',
       index: 0,
       sliderAnimStyle: {
         left: 0
       },
       showMenu: false,
       showProjectInfo: false,
-      dimensions: {
-        desktop: {
-          menu: {
-            logo: {
-              width: 100
-            }
-          }
-        },
-        mobile: {
-          menu: {
-            logo: {
-              width: 60
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-  calculateStateByIndex(operation, state){
-    let index = state.index
-    let maxIndex = state.projects.length
-
-    if(operation === '+'){
-      index++
-    }else if(operation === '-'){
-      index--
-    }
-
-    if(index < 0){
-      index = 0
-      // index = maxIndex - 1
-    }else if(index >= maxIndex){
-      index = maxIndex - 1
-      // index = 0
-    }
-
-    if(index !== state.index){
-      let sliderAnimStyle = {
-        left: -index * state.width,
-        transition: '1s'
-      }
-      return {...state, index, sliderAnimStyle, currentProject: state.projects[index]}
+      timeout: -1
     }
 
     return state
   }
 
 
-  calculateSizeAndOrientation(){
-    let orientation = screen.orientation || screen.oOrientation || screen.mozOrientation || screen.msOrientation || screen.webkitOrientation
-    let width = window.innerWidth
-    let height = window.innerHeight
-    let size
-    let displayState = DisplayStates.MAIN
-    let message = ''
-
-    if(typeof orientation === 'undefined'){
-      if(width > height){
-        orientation = 'landscape'
-      }else{
-        orientation = 'portrait'
-      }
-    }
-    if(typeof orientation.type !== 'undefined'){
-      orientation = orientation.type
-    }
-    if(orientation.indexOf('portrait') !== -1){
-      orientation = 'portrait'
-    }else if(orientation.indexOf('landscape') !== -1){
-      orientation = 'landscape'
-    }
-
-    size = width * window.devicePixelRatio
-
-    if(orientation !== 'landscape'){
-      displayState = DisplayStates.WARNING
-      message = 'This site is best viewed in landscape mode.'
-    }
-
-    let type = height > MAX_HEIGHT ? 'desktop' : 'mobile'
-
-    return {size, width, height, type, displayState, message}
-  }
-
   reduce(state, action) {
 
     let operation
-    let currentProject
 
     switch(action.type) {
 
@@ -130,15 +115,19 @@ class Store extends ReduceStore {
 
 
       case ActionTypes.DATA_LOADED:
-        currentProject = action.payload.data.projects[0]
-        //console.log(currentProject)
-        //let projects = action.payload.data.projects
-        return {...state, ...action.payload.data, currentProject, ...this.calculateSizeAndOrientation(state)}
+        return {
+          ...state,
+          ...action.payload,
+          displayState: DisplayStates.MAIN,
+        }
 
 
       case ActionTypes.SET_SIZE:
       case ActionTypes.SET_ORIENTATION:
-        return {...state, ...this.calculateSizeAndOrientation()}
+        return {
+          ...state,
+          ...calculateSizeAndOrientation(),
+        }
 
 
       case ActionTypes.SLIDER_CLICKED:
@@ -151,28 +140,20 @@ class Store extends ReduceStore {
           operation = '+'
         }
 
-        return this.calculateStateByIndex(operation, state)
+        return calculateStateByIndex(operation, state)
 
 
       case ActionTypes.SLIDER_SWIPED:
 
         let direction = action.payload.event.detail.direction
 
-        if(state.orientation === 'landscape'){
-          if(direction === 'right'){
-            operation = '-'
-          }else if(direction === 'left'){
-            operation = '+'
-          }
-        }else{
-          if(direction === 'down'){
-            operation = '-'
-          }else if(direction === 'up'){
-            operation = '+'
-          }
+        if(direction === 'right'){
+          operation = '-'
+        }else if(direction === 'left'){
+          operation = '+'
         }
 
-        return this.calculateStateByIndex(operation, state)
+        return calculateStateByIndex(operation, state)
 
 
       case ActionTypes.SLIDER_KEYPRESS:
@@ -194,8 +175,12 @@ class Store extends ReduceStore {
 
 
       case ActionTypes.LOGO_CLICKED:
+        let timeout = action.payload.timeout
+        if(state.timeout !== -1){
+          clearTimeout(state.timeout)
+        }
         let showMenu = !state.showMenu
-        return {...state, showMenu}
+        return {...state, showMenu, timeout}
 
 
       case ActionTypes.MENU_CLICKED:

@@ -1,6 +1,7 @@
 import AppDispatcher from './app_dispatcher'
 import * as ActionTypes from './constants/action_types'
 
+
 export default {
 
   message(message){
@@ -13,17 +14,13 @@ export default {
   dataLoaded(data){
     AppDispatcher.dispatch({
       type: ActionTypes.DATA_LOADED,
-      payload: {data}
+      payload: {...data}
     })
   },
 
   setSize(){
-    let width = window.innerWidth
-    let height = window.innerHeight
-
     AppDispatcher.dispatch({
       type: ActionTypes.SET_SIZE,
-      payload: {width, height}
     })
   },
 
@@ -51,9 +48,20 @@ export default {
   },
 
 
-  logoClicked(){
+  logoClicked(menuIsShowing){
+    let timeout = -1
+    if(menuIsShowing === false){
+      // close menu automatically after 5 seconds
+      timeout = setTimeout(() => {
+        AppDispatcher.dispatch({
+          type: ActionTypes.LOGO_CLICKED,
+          payload: {timeout: -1}
+        })
+      }, 5000)
+    }
     AppDispatcher.dispatch({
       type: ActionTypes.LOGO_CLICKED,
+      payload: {timeout}
     })
   },
 

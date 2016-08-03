@@ -23,7 +23,7 @@
   margin-left: 190px;
   font-size: 15px;
   color: #333; }
-  @media all and (min-height: 650px) {
+  @media all and (min-height: 720px) {
     #contact_content {
       margin-left: 300px;
       line-height: 1.7em;
