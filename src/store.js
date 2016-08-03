@@ -9,32 +9,44 @@ const MAX_HEIGHT_DESKTOP = 720
 
 function calculateSizeAndOrientation(){
 
-  let orientation = screen.orientation || screen.oOrientation || screen.mozOrientation || screen.msOrientation || screen.webkitOrientation
+//  let orientation = screen.orientation || screen.oOrientation || screen.mozOrientation || screen.msOrientation || screen.webkitOrientation
   let width = window.innerWidth
   let height = window.innerHeight
   let size, type
   let displayState = DisplayStates.MAIN
   let message = ''
+  let orientation
 
-  if(typeof orientation === 'undefined'){
-    if(width > height){
-      orientation = 'landscape'
-    }else{
-      orientation = 'portrait'
-    }
-  }
-  if(typeof orientation.type !== 'undefined'){
-    orientation = orientation.type
-  }
-  if(orientation.indexOf('portrait') !== -1){
-    orientation = 'portrait'
-  }else if(orientation.indexOf('landscape') !== -1){
+  if(width > height){
     orientation = 'landscape'
+  }else{
+    orientation = 'portrait'
   }
+
+  // if(typeof orientation === 'undefined'){
+  //   if(width > height){
+  //     orientation = 'landscape'
+  //   }else{
+  //     orientation = 'portrait'
+  //   }
+  // }
+  // if(typeof orientation.type !== 'undefined'){
+  //   orientation = orientation.type
+  // }
+  // if(orientation.indexOf('portrait') !== -1){
+  //   orientation = 'portrait'
+  // }else if(orientation.indexOf('landscape') !== -1){
+  //   orientation = 'landscape'
+  // }
 
   size = width * window.devicePixelRatio
 
   type = height >= MAX_HEIGHT_DESKTOP ? 'desktop' : 'mobile'
+
+  if(orientation !== 'landscape'){
+    displayState = DisplayStates.WARNING
+    message = 'This website is best viewed in landscape mode'
+  }
 
   return {size, width, height, type, orientation, displayState, message}
 }
@@ -43,6 +55,12 @@ function calculateSizeAndOrientation(){
 function calculateStateByIndex(operation, state){
   let index = state.index
   let maxIndex = state.projects.length
+  let sliderAutoScroll = state.sliderAutoScroll
+  if(sliderAutoScroll !== -1){
+    clearInterval(state.sliderAutoScroll)
+    sliderAutoScroll = -1
+  }
+
 
   if(operation === '+'){
     index++
@@ -63,7 +81,7 @@ function calculateStateByIndex(operation, state){
       left: -index * state.width,
       transition: '1s'
     }
-    return {...state, index, sliderAnimStyle, currentProject: state.projects[index]}
+    return {...state, index, sliderAnimStyle, sliderAutoScroll, currentProject: state.projects[index]}
   }
 
   return state
@@ -74,20 +92,16 @@ class Store extends ReduceStore {
 
   getInitialState(){
 
-    let displayState = DisplayStates.MESSAGE
-    let message = 'loading...'
     let state = calculateSizeAndOrientation()
 
-    if(state.orientation !== 'landscape'){
-      displayState = DisplayStates.WARNING
-      message = 'This site is best viewed in landscape mode.'
+    if(state.orientation === 'landscape'){
+      state.displayState = DisplayStates.MESSAGE
+      state.message = 'loading...'
     }
 
     state = {
       ...state,
       ...getBrowser(),
-      displayState,
-      message,
       projects: [],
       imageFolder: '',
       currentProject: {},
@@ -97,7 +111,9 @@ class Store extends ReduceStore {
       },
       showMenu: false,
       showProjectInfo: false,
-      timeout: -1
+      menuAutoHide: -1,
+      sliderAutoScroll: -1,
+      sliderAutoScrollDirection: 1,
     }
 
     return state
@@ -107,7 +123,7 @@ class Store extends ReduceStore {
   reduce(state, action) {
 
     let operation
-
+    //console.log(action.type)
     switch(action.type) {
 
       case ActionTypes.MESSAGE:
@@ -115,6 +131,12 @@ class Store extends ReduceStore {
 
 
       case ActionTypes.DATA_LOADED:
+        if(state.displayState === DisplayStates.WARNING){
+          return {
+            ...state,
+            ...action.payload,
+          }
+        }
         return {
           ...state,
           ...action.payload,
@@ -124,10 +146,57 @@ class Store extends ReduceStore {
 
       case ActionTypes.SET_SIZE:
       case ActionTypes.SET_ORIENTATION:
+        // fix for ios 5.1
+        let d = state.displayState
+        let s = calculateSizeAndOrientation()
+        if(d === DisplayStates.CONTACT && s.displayState !== DisplayStates.WARNING){
+          s.displayState = DisplayStates.CONTACT
+        }
         return {
           ...state,
-          ...calculateSizeAndOrientation(),
+          ...s,
         }
+
+
+      case ActionTypes.START_AUTO_SLIDER:
+        return {
+          ...state,
+          ...action.payload
+        }
+
+
+      case ActionTypes.STOP_AUTO_SLIDER:
+        if(state.sliderAutoScroll !== -1){
+          clearInterval(state.sliderAutoScroll)
+          return {
+            ...state,
+            sliderAutoScroll: -1,
+          }
+        }
+        return state
+
+
+      case ActionTypes.SLIDER_NEXT_SLIDE:
+        let index = state.index
+        let maxIndex = state.projects.length
+        let sliderAutoScrollDirection = state.sliderAutoScrollDirection
+
+        index += sliderAutoScrollDirection
+
+        if(index === maxIndex){
+          index = maxIndex - 2
+          sliderAutoScrollDirection = -1
+        }else if(index === -1){
+          index = 1
+          sliderAutoScrollDirection = 1
+        }
+
+        let sliderAnimStyle = {
+          left: -index * state.width,
+          transition: '1s'
+        }
+
+        return {...state, index, sliderAnimStyle, sliderAutoScrollDirection, currentProject: state.projects[index]}
 
 
       case ActionTypes.SLIDER_CLICKED:
@@ -171,7 +240,7 @@ class Store extends ReduceStore {
           operation = '+'
         }
 
-        return this.calculateStateByIndex(operation, state)
+        return calculateStateByIndex(operation, state)
 
 
       case ActionTypes.LOGO_CLICKED:
@@ -188,6 +257,11 @@ class Store extends ReduceStore {
         switch(id){
 
           case 'contact':
+            // let sliderAutoScroll = state.sliderAutoScroll
+            // if(sliderAutoScroll !== -1){
+            //   clearInterval(state.sliderAutoScroll)
+            //   sliderAutoScroll = -1
+            // }
             if(state.displayState === DisplayStates.MAIN){
               return {...state, displayState: DisplayStates.CONTACT, showProjectInfo: false}
             }

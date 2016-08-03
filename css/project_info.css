@@ -45,7 +45,9 @@
       font-size: 120%; } }
   @media all and (max-height: 320px) {
     #project_info_container {
-      padding: 10px 20px; } }
+      height: 150px;
+      padding: 10px 10px;
+      letter-spacing: 0px; } }
 
 .project_info_item {
   width: 100%; }

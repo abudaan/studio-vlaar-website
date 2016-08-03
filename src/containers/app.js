@@ -7,7 +7,6 @@ import ProjectInfo from '../components/project_info'
 import ImageSlider from '../components/image_slider'
 import Store from '../store'
 import * as DisplayStates from '../constants/display_states'
-import {fetchJSON} from '../fetch_helpers'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
@@ -29,23 +28,30 @@ class App extends Component{
     this.index = Store.getState().index
     this._windowResizeListener = this._handleResize.bind(this)
     this._windowKeyPressListener = this._handleKeyPress.bind(this)
+    this._orientationChangeListener = this._handleOrientationChange.bind(this)
     this._swipeListener = this._handleSwipe.bind(this)
-    fetchJSON('./data.json')
-    .then(Actions.dataLoaded)
+    Actions.loadData()
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this._windowKeyPressListener)
     document.addEventListener('swipe', this._swipeListener)
+    // if(this.state.os !== 'ios'){
+    //   window.addEventListener('resize', this._windowResizeListener)
+    // }
     window.addEventListener('resize', this._windowResizeListener)
-    window.addEventListener('orientationchange', this._windowResizeListener)
+    window.addEventListener('orientationchange', this._orientationChangeListener)
+    Actions.startAutoSlider()
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this._windowKeyPressListener)
     document.removeEventListener('swipe', this._swipeListener)
+    // if(this.state.os !== 'ios'){
+    //   window.removeEventListener('resize', this._windowResizeListener)
+    // }
     window.removeEventListener('resize', this._windowResizeListener)
-    window.removeEventListener('orientationchange', this._windowResizeListener)
+    window.removeEventListener('orientationchange', this._orientationChangeListener)
   }
 
   _handleResize(){
@@ -60,10 +66,14 @@ class App extends Component{
     Actions.sliderSwiped(e)
   }
 
+  _handleOrientationChange(e){
+    Actions.setOrientation()
+  }
+
   render(){
     let component = null
 
-    console.log(this.state)
+    //console.log(this.state)
 
     switch(this.state.displayState){
 
