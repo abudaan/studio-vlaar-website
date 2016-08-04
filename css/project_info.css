@@ -30,10 +30,11 @@
   text-align: right; }
   @media all and (min-height: 720px) {
     #project_info_container {
-      font-size: 15px; } }
+      font-size: 14px; } }
   @media all and (min-height: 760px) {
     #project_info_container {
-      font-size: 16px; } }
+      font-size: 16px;
+      color: red; } }
   @media all and (max-height: 400px) {
     #project_info_container {
       top: 5px;
