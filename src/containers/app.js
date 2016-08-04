@@ -39,6 +39,7 @@ class App extends Component{
     // if(this.state.os !== 'ios'){
     //   window.addEventListener('resize', this._windowResizeListener)
     // }
+    // NOTE: resize listneren is necessary on ios when the address bar appears or disappears!
     window.addEventListener('resize', this._windowResizeListener)
     window.addEventListener('orientationchange', this._orientationChangeListener)
     Actions.startAutoSlider()

@@ -2,9 +2,13 @@ import React, {PropTypes} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
-function createInfo({info}){
-  return {__html: info.replace(/\\n/g, '<br/>')};
+function createInfo(height, info){
+  if(height > 230){ // figure based on current content
+    return {__html: info.replace(/\\n/g, '<br/>')}
+  }
+  return {__html: info.replace(/\\n/g, ' | ')}
 }
+
 
 const ProjectInfo = ({type, width, height, showProjectInfo, hideProjectInfo, currentProject}) => {
 
@@ -32,7 +36,7 @@ const ProjectInfo = ({type, width, height, showProjectInfo, hideProjectInfo, cur
           <div key={currentProject.id} id={'project_info_container'}>
             <div className={'project_info_item'}>{'#' + currentProject.id}</div>
             <div className={'project_info_item'}>{'-'}</div>
-            <div className={'project_info_item'} dangerouslySetInnerHTML={createInfo(currentProject)}/>
+            <div className={'project_info_item'} dangerouslySetInnerHTML={createInfo(height, currentProject.info)}/>
           </div>
         </ReactCSSTransitionGroup>
 

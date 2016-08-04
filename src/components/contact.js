@@ -39,14 +39,6 @@ const Contact = ({type, width, height, hideContact}) => {
     width: (width - menuWidth) * 0.55,
   }
 
-  //let menuItemStyle = {}
-  // if(type === 'mobile'){
-  //   menuItemStyle = {
-  //     height: (height) / 7,
-  //     lineHeight: `${(height) / 7}px`,
-  //   }
-  // }
-
   return (
     <div style={style} id={'contact_page'}>
       <div style={styleContent} id={'contact_content'}>
