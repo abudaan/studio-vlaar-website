@@ -9,39 +9,39 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="31.408409mm"
-   height="42.584492mm"
-   viewBox="0 0 111.28964 150.88993"
-   id="svg3817"
+   width="40.507256mm"
+   height="58.404312mm"
+   viewBox="0 0 143.52965 206.94441"
+   id="svg3458"
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="logo-mobile.inkscape.svg">
   <defs
-     id="defs3819" />
+     id="defs3460" />
   <sodipodi:namedview
      id="base"
-     pagecolor="#0000ff"
+     pagecolor="#ffffff"
      bordercolor="#666666"
-     borderopacity="1.0"
+     borderopacity="1"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="130.79386"
-     inkscape:cy="63.558372"
+     inkscape:zoom="1.4"
+     inkscape:cx="335.04178"
+     inkscape:cy="86.623222"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
      inkscape:window-width="1920"
      inkscape:window-height="1056"
      inkscape:window-x="0"
      inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
-     id="metadata3822">
+     id="metadata3463">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -56,45 +56,52 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-247.21232,-156.91724)">
+     transform="translate(1008.9077,282.53857)">
     <text
-       y="172.51724"
-       x="294.02023"
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="text3759"
-       inkscape:export-filename="/home/abudaan/workspace/vlaar/img/logo-mobile2.svg"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       y="-111.96671"
+       x="-942.112"
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.90175056px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Regular;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text46">
       <tspan
-         x="294.02023"
-         y="172.51724"
-         id="tspan3761"
-         style="fill:#ffffff;fill-opacity:1">S</tspan>
+         x="-942.112"
+         y="-111.96671"
+         id="tspan48">-</tspan>
+      <tspan
+         x="-1009.9894 -999.61169 -990.51855 -976.49011 -962.3772 -953.90936 -941.60492 -925.64966 -910.65784 -894.9054 -879.15295"
+         y="-91.684608"
+         sodipodi:role="line"
+         id="tspan50">studioVLAAR</tspan>
+      <tspan
+         x="-942.112"
+         y="-71.402519"
+         id="tspan52">-</tspan>
+    </text>
+    <text
+       y="-271.81357"
+       x="-942.50385"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text54">
+      <tspan
+         x="-942.50385"
+         y="-271.81357"
+         id="tspan56">S</tspan>
     </text>
     <g
-       id="g3767"
-       transform="matrix(1.25,0,0,-1.25,302.92024,303.16924)"
-       inkscape:export-filename="/home/abudaan/workspace/vlaar/img/logo-mobile2.svg"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="fill:#ffffff;fill-opacity:1">
+       id="g74"
+       transform="matrix(1.25,0,0,-1.25,-936.91297,-132.4227)">
       <path
-         d="m 0,0 1.706,3.924 -40.486,90.113 -3.468,0 L 0,0 Z"
-         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path3769"
+         d="m 0,0 2.784,6.404 -40.363,89.841 -5.661,0 L 0,0 Z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path76"
          inkscape:connector-curvature="0" />
     </g>
     <g
-       id="g3775"
-       transform="matrix(1.25,0,0,-1.25,308.28511,279.31849)"
-       inkscape:export-filename="/home/abudaan/workspace/vlaar/img/logo-mobile2.svg"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="fill:#ffffff;fill-opacity:1">
+       id="g78"
+       transform="matrix(1.25,0,0,-1.25,-933.64522,-156.64633)">
       <path
-         d="m 0,0 1.858,-4.131 35.985,79.087 -3.703,0 L 0,0 Z"
-         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path3777"
+         d="m 0,0 2.954,-6.57 37.528,83.436 -5.897,0 L 0,0 Z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path80"
          inkscape:connector-curvature="0" />
     </g>
   </g>

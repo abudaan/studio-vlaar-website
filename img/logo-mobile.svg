@@ -6,14 +6,14 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
-   id="svg3817"
-   viewBox="0 0 111.28964 150.88993"
-   height="42.584492mm"
-   width="31.408409mm">
+   id="svg3458"
+   viewBox="0 0 143.52965 206.94441"
+   height="58.404312mm"
+   width="40.507256mm">
   <defs
-     id="defs3819" />
+     id="defs3460" />
   <metadata
-     id="metadata3822">
+     id="metadata3463">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -25,36 +25,51 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-247.21232,-156.91724)"
+     transform="translate(1008.9077,282.53857)"
      id="layer1">
     <text
-       id="text3759"
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       x="294.02023"
-       y="172.51724">
+       id="text46"
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.90175056px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Regular;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       x="-942.112"
+       y="-111.96671">
       <tspan
-         style="fill:#ffffff;fill-opacity:1"
-         id="tspan3761"
-         y="172.51724"
-         x="294.02023">S</tspan>
+         id="tspan48"
+         y="-111.96671"
+         x="-942.112">-</tspan>
+      <tspan
+         id="tspan50"
+         y="-91.684608"
+         x="-1009.9894 -999.61169 -990.51855 -976.49011 -962.3772 -953.90936 -941.60492 -925.64966 -910.65784 -894.9054 -879.15295">studioVLAAR</tspan>
+      <tspan
+         id="tspan52"
+         y="-71.402519"
+         x="-942.112">-</tspan>
+    </text>
+    <text
+       id="text54"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       x="-942.50385"
+       y="-271.81357">
+      <tspan
+         id="tspan56"
+         y="-271.81357"
+         x="-942.50385">S</tspan>
     </text>
     <g
-       style="fill:#ffffff;fill-opacity:1"
-       transform="matrix(1.25,0,0,-1.25,302.92024,303.16924)"
-       id="g3767">
+       transform="matrix(1.25,0,0,-1.25,-936.91297,-132.4227)"
+       id="g74">
       <path
-         id="path3769"
-         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         d="m 0,0 1.706,3.924 -40.486,90.113 -3.468,0 L 0,0 Z" />
+         id="path76"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 2.784,6.404 -40.363,89.841 -5.661,0 L 0,0 Z" />
     </g>
     <g
-       style="fill:#ffffff;fill-opacity:1"
-       transform="matrix(1.25,0,0,-1.25,308.28511,279.31849)"
-       id="g3775">
+       transform="matrix(1.25,0,0,-1.25,-933.64522,-156.64633)"
+       id="g78">
       <path
-         id="path3777"
-         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         d="m 0,0 1.858,-4.131 35.985,79.087 -3.703,0 L 0,0 Z" />
+         id="path80"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 2.954,-6.57 37.528,83.436 -5.897,0 L 0,0 Z" />
     </g>
   </g>
 </svg>

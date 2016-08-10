@@ -16,8 +16,8 @@
       width: 200px; } }
 
 #menu_logo_img_mobile {
-  width: 60px;
-  padding: 10px 0;
+  width: 85px;
+  padding: 5px 0;
   display: inline; }
   @media all and (min-height: 720px) {
     #menu_logo_img_mobile {

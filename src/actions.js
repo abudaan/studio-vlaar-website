@@ -91,7 +91,7 @@ export default {
           type: ActionTypes.LOGO_CLICKED,
           payload: {timeout: -1}
         })
-      }, 15000)
+      }, 5000)
     }
     AppDispatcher.dispatch({
       type: ActionTypes.LOGO_CLICKED,
