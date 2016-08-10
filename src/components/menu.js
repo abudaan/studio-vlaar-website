@@ -12,10 +12,13 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
 
   if(type === 'mobile'){
     let logo = document.getElementById('menu_logo_img_mobile')
+    //let title = document.getElementById('menu_logo_title')
     if(logo){
       let style = getComputedStyle(logo)
       let h = style.height.replace('px', '')
       let p = style.paddingTop.replace('px', '')
+      // style = getComputedStyle(title)
+      // h += style.height.replace('px', '')
       menuHeight = height - h - p - p
     }
   }
@@ -97,7 +100,12 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
     <div className={'menu'}>
       <div className={'menu_logo'}>
         <img id={'menu_logo_img_mobile'} src={'./img/logo-mobile.svg'} onClick={_logoClicked}></img>
-        <img id={'menu_logo_img_desktop'} src={'./img/logo-desktop.svg'} onClick={_logoClicked}></img>
+        <div id={'menu_logo_img_desktop'} onClick={_logoClicked}>
+          <img src={'./img/logo-desktop.svg'}></img>
+          <div>-</div>
+          <div>studioVLAAR</div>
+          <div>-</div>
+        </div>
       </div>
       <div className={'menu_anim_container'} style={animStyle1}>
         <div className={'menu_collapsed'} style={animStyle2}>

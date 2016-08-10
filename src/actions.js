@@ -83,19 +83,19 @@ export default {
 
 
   logoClicked(menuIsShowing){
-    let menuAutoHide = -1
+    let timeout = -1
     if(menuIsShowing === false){
       // close menu automatically after 5 seconds
-      menuAutoHide = setTimeout(() => {
+      timeout = setTimeout(() => {
         AppDispatcher.dispatch({
           type: ActionTypes.LOGO_CLICKED,
-          payload: {menuAutoHide: -1}
+          payload: {timeout: -1}
         })
-      }, 5000)
+      }, 15000)
     }
     AppDispatcher.dispatch({
       type: ActionTypes.LOGO_CLICKED,
-      payload: {menuAutoHide}
+      payload: {timeout}
     })
   },
 

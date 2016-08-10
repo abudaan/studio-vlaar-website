@@ -245,6 +245,7 @@ class Store extends ReduceStore {
 
       case ActionTypes.LOGO_CLICKED:
         let timeout = action.payload.timeout
+        //console.log(timeout, state.timeout)
         if(state.timeout !== -1){
           clearTimeout(state.timeout)
         }

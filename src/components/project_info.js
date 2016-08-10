@@ -18,6 +18,8 @@ const ProjectInfo = ({type, width, height, showProjectInfo, hideProjectInfo, cur
   if(type === 'mobile'){
     left = -(height - 190) // width of menu
     top = 0
+  }else{
+    top += (3 * 24)
   }
   let style = {
     width: height,

@@ -27,9 +27,13 @@
       width: 25%; } }
 
 #menu_logo_img_desktop {
-  padding: 10px 0;
-  width: 100px;
   display: none; }
+  #menu_logo_img_desktop img {
+    padding: 10px 0;
+    width: 100px; }
+  #menu_logo_img_desktop div {
+    text-align: center;
+    height: 24px; }
   @media all and (min-height: 720px) {
     #menu_logo_img_desktop {
       display: inline; } }

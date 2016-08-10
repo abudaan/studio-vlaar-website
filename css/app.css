@@ -117,9 +117,13 @@ html, body {
       width: 25%; } }
 
 #menu_logo_img_desktop {
-  padding: 10px 0;
-  width: 100px;
   display: none; }
+  #menu_logo_img_desktop img {
+    padding: 10px 0;
+    width: 100px; }
+  #menu_logo_img_desktop div {
+    text-align: center;
+    height: 24px; }
   @media all and (min-height: 720px) {
     #menu_logo_img_desktop {
       display: inline; } }
@@ -243,11 +247,13 @@ html, body {
   text-align: right; }
   @media all and (min-height: 720px) {
     #project_info_container {
-      font-size: 14px; } }
-  @media all and (min-height: 760px) {
+      font-size: 13px; } }
+  @media all and (min-height: 780px) {
     #project_info_container {
-      font-size: 16px;
-      color: red; } }
+      font-size: 14px; } }
+  @media all and (min-height: 820px) {
+    #project_info_container {
+      font-size: 16px; } }
   @media all and (max-height: 400px) {
     #project_info_container {
       top: 5px;
