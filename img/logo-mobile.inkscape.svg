@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="40.507256mm"
-   height="58.404312mm"
-   viewBox="0 0 143.52965 206.94441"
-   id="svg3458"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="logo-mobile.inkscape.svg">
+   id="svg3458"
+   viewBox="0 0 143.52965 206.94441"
+   height="58.404312mm"
+   width="40.507256mm">
   <defs
      id="defs3460" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="335.04178"
-     inkscape:cy="86.623222"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1056"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
   <metadata
      id="metadata3463">
     <rdf:RDF>
@@ -53,56 +25,51 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(1008.9077,282.53857)">
+     transform="translate(1008.9077,282.53857)"
+     id="layer1">
     <text
-       y="-111.96671"
-       x="-942.112"
+       id="text46"
        style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.90175056px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Regular;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="text46">
+       x="-942.112"
+       y="-111.96671">
       <tspan
-         x="-942.112"
+         id="tspan48"
          y="-111.96671"
-         id="tspan48">-</tspan>
+         x="-942.112">-</tspan>
       <tspan
-         x="-1009.9894 -999.61169 -990.51855 -976.49011 -962.3772 -953.90936 -941.60492 -925.64966 -910.65784 -894.9054 -879.15295"
+         id="tspan50"
          y="-91.684608"
-         sodipodi:role="line"
-         id="tspan50">studioVLAAR</tspan>
+         x="-1009.9894 -999.61169 -990.51855 -976.49011 -962.3772 -953.90936 -941.60492 -925.64966 -910.65784 -894.9054 -879.15295">studioVLAAR</tspan>
       <tspan
-         x="-942.112"
+         id="tspan52"
          y="-71.402519"
-         id="tspan52">-</tspan>
+         x="-942.112">-</tspan>
     </text>
     <text
-       y="-271.81357"
-       x="-942.50385"
+       id="text54"
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;font-family:'Libre Baskerville';-inkscape-font-specification:LibreBaskerville-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="text54">
+       x="-942.50385"
+       y="-271.81357">
       <tspan
-         x="-942.50385"
+         id="tspan56"
          y="-271.81357"
-         id="tspan56">S</tspan>
+         x="-942.50385">S</tspan>
     </text>
     <g
-       id="g74"
-       transform="matrix(1.25,0,0,-1.25,-936.91297,-132.4227)">
+       transform="matrix(1.25,0,0,-1.25,-936.91297,-132.4227)"
+       id="g74">
       <path
-         d="m 0,0 2.784,6.404 -40.363,89.841 -5.661,0 L 0,0 Z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path76"
-         inkscape:connector-curvature="0" />
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 2.784,6.404 -40.363,89.841 -5.661,0 L 0,0 Z" />
     </g>
     <g
-       id="g78"
-       transform="matrix(1.25,0,0,-1.25,-933.64522,-156.64633)">
+       transform="matrix(1.25,0,0,-1.25,-933.64522,-156.64633)"
+       id="g78">
       <path
-         d="m 0,0 2.954,-6.57 37.528,83.436 -5.897,0 L 0,0 Z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path80"
-         inkscape:connector-curvature="0" />
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 2.954,-6.57 37.528,83.436 -5.897,0 L 0,0 Z" />
     </g>
   </g>
 </svg>
