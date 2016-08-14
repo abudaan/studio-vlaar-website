@@ -56,6 +56,7 @@ class App extends Component{
   }
 
   _handleResize(){
+    //document.getElementById('debug').innerHTML = window.innerWidth + 'x' + window.innerHeight
     Actions.setSize()
   }
 

@@ -13,7 +13,7 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
   if(type === 'mobile'){
 
     let logo
-    if(height < 320){
+    if(height < 321){
       logo = document.getElementById('menu_logo_img_mobile2')
     }else{
       logo = document.getElementById('menu_logo_img_mobile')

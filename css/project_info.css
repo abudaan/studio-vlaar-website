@@ -17,7 +17,7 @@
   @media all and (max-height: 400px) {
     #project_info {
       height: 130px; } }
-  @media all and (max-height: 319px) {
+  @media all and (max-height: 320px) {
     #project_info {
       height: 120px; } }
 
@@ -36,7 +36,7 @@
       top: 5px;
       line-height: 1.9em;
       font-size: 13px; } }
-  @media all and (max-height: 319px) {
+  @media all and (max-height: 320px) {
     #project_info_container {
       letter-spacing: 0.2px;
       line-height: 1.7em;
