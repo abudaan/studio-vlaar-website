@@ -3,13 +3,9 @@
   position: absolute; }
 
 #photo_pascal {
-  display: inline-block;
+  display: inline;
   float: left;
-  height: inherit; }
-
-#photo_pascal img {
-  width: 100%;
-  height: auto; }
+  height: 100%; }
 
 #contact_content {
   display: table;

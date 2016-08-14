@@ -23,19 +23,25 @@ $small_width: 150px
     width: 200px
 
 
+#menu_logo_img_mobile2
+  width: 85px
+  padding: 5px 0
+
+  display: none
+  @media all and (max-height: $max_height_extra_small)
+    display: inline
+    width: 25%
+
 
 #menu_logo_img_mobile
 
   width: 85px
   padding: 5px 0
+  display: none
 
-  display: inline
+  @media all and (min-height: $min_height_extra_small) and (max-height: $max_height_desktop)
+    display: inline
 
-  @media all and (min-height: $min_height_desktop)
-    display: none
-
-  @media all and (max-height: $max_height_extra_small)
-    width: 25%
 
 
 #menu_logo_img_desktop

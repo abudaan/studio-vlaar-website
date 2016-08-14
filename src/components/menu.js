@@ -11,7 +11,14 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
   let menuHeight = 200
 
   if(type === 'mobile'){
-    let logo = document.getElementById('menu_logo_img_mobile')
+
+    let logo
+    if(height < 320){
+      logo = document.getElementById('menu_logo_img_mobile2')
+    }else{
+      logo = document.getElementById('menu_logo_img_mobile')
+    }
+
     //let title = document.getElementById('menu_logo_title')
     if(logo){
       let style = getComputedStyle(logo)
@@ -99,6 +106,7 @@ const Menu = ({type, height, showMenu, logoClicked, menuClicked, hideMenu, displ
   return (
     <div className={'menu'}>
       <div className={'menu_logo'}>
+        <img id={'menu_logo_img_mobile2'} src={'./img/logo-mobile2.svg'} onClick={_logoClicked}></img>
         <img id={'menu_logo_img_mobile'} src={'./img/logo-mobile.svg'} onClick={_logoClicked}></img>
         <div id={'menu_logo_img_desktop'} onClick={_logoClicked}>
           <img src={'./img/logo-desktop.svg'}></img>

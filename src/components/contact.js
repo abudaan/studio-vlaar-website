@@ -34,6 +34,12 @@ const Contact = ({type, width, height, hideContact}) => {
   let menuWidth = type === 'desktop' ? 300 : 190
   let stylePhoto = {
     width: (width - menuWidth) * 0.45,
+    backgroundImage: 'url(./img/photo_pascal_light.jpg)',
+    WebkitBackgroundSize: 'cover',
+    MozbackgroundSize: 'cover',
+    ObackgroundSize: 'cover',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
   }
   let styleContent = {
     width: (width - menuWidth) * 0.55,
@@ -51,7 +57,7 @@ const Contact = ({type, width, height, hideContact}) => {
           <div className={'contact_item close'} onClick={hideContact} dangerouslySetInnerHTML={createMultiplySign()} />
         </div>
       </div>
-      <div style={stylePhoto} id={'photo_pascal'}><img src={'./img/pascal2.jpg'}></img></div>
+      <div style={stylePhoto} id={'photo_pascal'}></div>
     </div>
   )
 }
@@ -66,3 +72,10 @@ Contact.propTypes = {
 }
 
 export default Contact
+
+
+      // <div style={stylePhoto} id={'photo_pascal'}>
+      //   <div id={'photo_pascal_container'}>
+      //     <img src={'./img/photo_pascal_light.jpg'}></img>
+      //   </div>
+      // </div>

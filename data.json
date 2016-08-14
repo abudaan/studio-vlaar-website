@@ -1,12 +1,13 @@
 {
   "projects": [
     {
-      "id": 100,
+      "id": 120,
       "image": {
-        "small": "project1_small.jpg",
-        "large": "project1_large.jpg"
+        "small": "project3_small.jpg",
+        "large": "project3_large.jpg"
       },
-      "info": "apartment building\\nresidential\\nholland"
+      "position": "center center",
+      "info": "souterrain extention\\nprivate house | residential\\ninterior | amsterdam"
     },
     {
       "id": 110,
@@ -14,15 +15,17 @@
         "small": "project2_small.jpg",
         "large": "project2_large.jpg"
       },
-      "info": "groundfloor extention | private house\\nresidential | interior\\namsterdam"
+      "position": "center bottom",
+      "info": "groundfloor extention\\nprivate house | residential\\ninterior | amsterdam"
     },
     {
-      "id": 120,
+      "id": 100,
       "image": {
-        "small": "project3_small.jpg",
-        "large": "project3_large.jpg"
+        "small": "project1_small.jpg",
+        "large": "project1_large.jpg"
       },
-      "info": "souterrain extention | private house\\nresidential | interior\\namsterdam"
+      "position": "center center",
+      "info": "apartment building\\nresidential\\nholland"
     }
   ],
   "imageFolder": "./portfolio",

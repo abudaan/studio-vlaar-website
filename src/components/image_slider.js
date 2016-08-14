@@ -46,6 +46,7 @@ export default class ImageSlider extends Component{
       }else{
         url = `${this.imageFolder}/${project.image.large}`
       }
+      divStyle.backgroundPosition = project.position
       style = {...divStyle, backgroundImage: `url(${url})`, width: this.props.width}
       slides.push(<div key={i} style={style}></div>)
     })
