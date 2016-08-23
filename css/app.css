@@ -81,6 +81,18 @@ html, body {
   text-align: center;
   color: #ddd; }
 
+#nojs {
+  color: white; }
+  #nojs p, #nojs h1, #nojs ul, #nojs li {
+    margin: 10px; }
+  #nojs h1 {
+    font-size: 20px;
+    margin-bottom: 25px; }
+  #nojs p {
+    margin-bottom: 25px; }
+  #nojs ul {
+    list-style: circle inside; }
+
 #debug {
   right: 0;
   position: absolute;

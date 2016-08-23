@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   Swipe.init()
   //document.getElementById('debug').innerHTML = window.innerWidth + 'x' + window.innerHeight
 
+  if(typeof ReactDOM.render !== 'function'){
+    document.getElementById('nojs').innerHTML = 'This browser is not supported.<br>Use a modern browser, or Internet Explorer 11'
+    return
+  }
+
   ReactDOM.render(
     <App />,
     document.getElementById('app')
