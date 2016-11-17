@@ -1,13 +1,22 @@
 {
   "projects": [
     {
+      "id": 135,
+      "image": {
+        "small": "project4_small.jpg",
+        "large": "project4_large.jpg"
+      },
+      "position": "center center",
+      "info": "storeconcept | kick retail\\ninterior\\nalmere"
+    },
+    {
       "id": 120,
       "image": {
         "small": "project3_small.jpg",
         "large": "project3_large.jpg"
       },
       "position": "center center",
-      "info": "souterrain extention\\nprivate house | residential\\ninterior | amsterdam"
+      "info": "souterrain extention | private house\\nresidential | interior\\namsterdam"
     },
     {
       "id": 110,
@@ -16,7 +25,7 @@
         "large": "project2_large.jpg"
       },
       "position": "center bottom",
-      "info": "groundfloor extention\\nprivate house | residential\\ninterior | amsterdam"
+      "info": "groundfloor extention | private house\\nresidential | interior\\namsterdam"
     },
     {
       "id": 100,
