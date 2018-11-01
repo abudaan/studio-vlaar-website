@@ -1,13 +1,58 @@
 {
   "projects": [
     {
-      "id": 135,
+      "id": 154,
       "image": {
-        "small": "project4_small.jpg",
-        "large": "project4_large.jpg"
+        "small": "154.1_small.jpg",
+        "large": "154.1_large.jpg"
       },
       "position": "center center",
-      "info": "storeconcept | kick retail\\ninterior\\nalmere"
+      "info": "storeconcept | 't friethuys\\nhospitality | interior\\nalkmaar"
+    },
+    {
+      "id": 154,
+      "image": {
+        "small": "154.2_small.jpg",
+        "large": "154.2_large.jpg"
+      },
+      "position": "center center",
+      "info": "storeconcept | 't friethuys\\nhospitality | interior\\nalkmaar"
+    },
+    {
+      "id": 139,
+      "image": {
+        "small": "project6_small.jpg",
+        "large": "project6_large.jpg"
+      },
+      "position": "center center",
+      "info": "total concept | 5 story townhouse\\nresidential | interior | exterior\\namsterdam"
+    },
+    {
+      "id": 139,
+      "image": {
+        "small": "project7_small.jpg",
+        "large": "project7_large.jpg"
+      },
+      "position": "center center",
+      "info": "total concept | 5 story townhouse\\nresidential | interior | exterior\\namsterdam"
+    },
+    {
+      "id": 135,
+      "image": {
+        "small": "135.1_small.jpg",
+        "large": "135.1_large.jpg"
+      },
+      "position": "center center",
+      "info": "storeconcept | kick\\nretail | interior\\nalmere"
+    },
+    {
+      "id": 135,
+      "image": {
+        "small": "135.2_small.jpg",
+        "large": "135.2_large.jpg"
+      },
+      "position": "center center",
+      "info": "storeconcept | kick\\nretail | interior\\nalmere"
     },
     {
       "id": 120,
@@ -17,6 +62,15 @@
       },
       "position": "center center",
       "info": "souterrain extention | private house\\nresidential | interior\\namsterdam"
+    },
+    {
+      "id": 118,
+      "image": {
+        "small": "118.2_small.jpg",
+        "large": "118.2_large.jpg"
+      },
+      "position": "center center",
+      "info": "urban densification | apartment building vinkenhof\\nresidential | interior | exterior\\nzaandam"
     },
     {
       "id": 110,
@@ -35,6 +89,24 @@
       },
       "position": "center center",
       "info": "apartment building\\nresidential\\nholland"
+    },
+    {
+      "id": "083",
+      "image": {
+        "small": "083.1_small.jpg",
+        "large": "083.1_large.jpg"
+      },
+      "position": "center center",
+      "info": "transformation | apartment building\\nresidential | interior | exterior\\nzaandam"
+    },
+    {
+      "id": "060",
+      "image": {
+        "small": "project5_small.jpg",
+        "large": "project5_large.jpg"
+      },
+      "position": "center center",
+      "info": "transformation | former post office\\nretail | exterior\\nschagen"
     }
   ],
   "imageFolder": "./portfolio",
