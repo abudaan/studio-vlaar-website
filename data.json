@@ -70,16 +70,7 @@
         "large": "118.2_large.jpg"
       },
       "position": "center center",
-      "info": "urban densification | apartment building vinkenhof\\nresidential | interior | exterior\\nzaandam"
-    },
-    {
-      "id": 110,
-      "image": {
-        "small": "project2_small.jpg",
-        "large": "project2_large.jpg"
-      },
-      "position": "center bottom",
-      "info": "groundfloor extention | private house\\nresidential | interior\\namsterdam"
+      "info": "urban densification | apartment\\nbuilding | residential | exterior \\nvinkenhof | zaandam"
     },
     {
       "id": 100,
