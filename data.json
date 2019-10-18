@@ -70,7 +70,7 @@
         "large": "118.2_large.jpg"
       },
       "position": "center center",
-      "info": "urban densification | apartment\\nbuilding | residential | exterior \\nvinkenhof | zaandam"
+      "info": "urban densification | apartment building\\nresidential | exterior \\nvinkenhof | zaandam"
     },
     {
       "id": 100,
@@ -79,7 +79,7 @@
         "large": "project1_large.jpg"
       },
       "position": "center center",
-      "info": "apartment building\\nresidential\\nholland"
+      "info": "apartment building on lake side\\nresidential | exterior \\nsomewhere in holland"
     },
     {
       "id": "083",
@@ -89,15 +89,6 @@
       },
       "position": "center center",
       "info": "transformation | apartment building\\nresidential | interior | exterior\\nzaandam"
-    },
-    {
-      "id": "060",
-      "image": {
-        "small": "project5_small.jpg",
-        "large": "project5_large.jpg"
-      },
-      "position": "center center",
-      "info": "transformation | former post office\\nretail | exterior\\nschagen"
     }
   ],
   "imageFolder": "./portfolio",
