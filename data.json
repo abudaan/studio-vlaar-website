@@ -55,6 +55,24 @@
       "info": "storeconcept | kick\\nretail | interior\\nalmere"
     },
     {
+      "id": "131-1",
+      "image": {
+        "small": "131_01_small.jpg",
+        "large": "131_01_large.jpg"
+      },
+      "position": "center center",
+      "info": "12 semi-detached villas\\nurban planning | residential | exterior\\nbeverwijk"
+    },
+    {
+      "id": "131-2",
+      "image": {
+        "small": "131_02_small.jpg",
+        "large": "131_02_large.jpg"
+      },
+      "position": "center center",
+      "info": "12 semi-detached villas\\nurban planning | residential | exterior\\nbeverwijk"
+    },
+    {
       "id": 120,
       "image": {
         "small": "project3_small.jpg",
