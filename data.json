@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "id": 148,
+      "image": {
+        "small": "148.1_small.jpg",
+        "large": "148.1_large.jpg"
+      },
+      "position": "center center",
+      "info": "storeconcept | kick\\nretail | interior\\namsterdam"
+    },
+    {
+      "id": 148,
+      "image": {
+        "small": "148.2_small.jpg",
+        "large": "148.2_large.jpg"
+      },
+      "position": "center center",
+      "info": "storeconcept | kick\\nretail | interior\\namsterdam"
+    },
+    {
       "id": 154,
       "image": {
         "small": "154.1_small.jpg",
@@ -55,21 +73,21 @@
       "info": "storeconcept | kick\\nretail | interior\\nalmere"
     },
     {
-      "id": "131-1",
+      "id": 131,
       "image": {
         "small": "131_01_small.jpg",
         "large": "131_01_large.jpg"
       },
-      "position": "center center",
+      "position": "center bottom",
       "info": "12 semi-detached villas\\nurban planning | residential | exterior\\nbeverwijk"
     },
     {
-      "id": "131-2",
+      "id": 131,
       "image": {
         "small": "131_02_small.jpg",
         "large": "131_02_large.jpg"
       },
-      "position": "center center",
+      "position": "center bottom",
       "info": "12 semi-detached villas\\nurban planning | residential | exterior\\nbeverwijk"
     },
     {
