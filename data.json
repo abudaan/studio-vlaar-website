@@ -1,6 +1,33 @@
 {
   "projects": [
     {
+      "id": 185,
+      "image": {
+        "small": "185_01_small.jpg",
+        "large": "185_01_large.jpg"
+      },
+      "position": "center center",
+      "info": "furniture concept | high-end apartment\\nresidential | interior | furniture\\noud zuid | amsterdam"
+    },
+    {
+      "id": 185,
+      "image": {
+        "small": "185_02_small.jpg",
+        "large": "185_02_large.jpg"
+      },
+      "position": "center center",
+      "info": "furniture concept | high-end apartment\\nresidential | interior | furniture\\noud zuid | amsterdam"
+    },
+    {
+      "id": 185,
+      "image": {
+        "small": "185_03_small.jpg",
+        "large": "185_03_large.jpg"
+      },
+      "position": "center center",
+      "info": "furniture concept | high-end apartment\\nresidential | interior | furniture\\noud zuid | amsterdam"
+    },
+    {
       "id": 154,
       "image": {
         "small": "154.1_small.jpg",
@@ -97,7 +124,7 @@
         "large": "project3_large.jpg"
       },
       "position": "center center",
-      "info": "souterrain extention | private house\\nresidential | interior\\namsterdam"
+      "info": "souterrain extention | private house\\nresidential | interior\\noud zuid | amsterdam"
     },
     {
       "id": 118,
@@ -124,7 +151,7 @@
         "large": "097.1_large.jpg"
       },
       "position": "center center",
-      "info": "ph-house designed by studioninedots\\naesthetic supervisor | residential\\nexecution amsterdam"
+      "info": "ph-house designed by studioninedots\\nresidential | aesthetic supervisor | execution\\noud zuid | amsterdam"
     },
     {
       "id": "097",
@@ -133,7 +160,7 @@
         "large": "097.2_large.jpg"
       },
       "position": "center center",
-      "info": "ph-house designed by studioninedots\\naesthetic supervisor | residential\\nexecution amsterdam"
+      "info": "ph-house designed by studioninedots\\nresidential | aesthetic supervisor | execution\\noud zuid | amsterdam"
     },
     {
       "id": "097",
@@ -142,7 +169,7 @@
         "large": "097.3_large.jpg"
       },
       "position": "center center",
-      "info": "ph-house designed by studioninedots\\naesthetic supervisor | residential\\nexecution amsterdam"
+      "info": "ph-house designed by studioninedots\nresidential | aesthetic supervisor | execution\noud zuid | amsterdam"
     },
     {
       "id": "083",
